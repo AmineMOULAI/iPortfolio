@@ -1,161 +1,206 @@
-import Masthead from "@/components/newspaper/Masthead";
-import Sidebar from "@/components/newspaper/Sidebar";
-import SectionHeader from "@/components/newspaper/SectionHeader";
-import ArticleCard from "@/components/newspaper/ArticleCard";
-import BookCard from "@/components/newspaper/BookCard";
-import Footer from "@/components/newspaper/Footer";
+import PageLayout from "@/components/newspaper/PageLayout";
+import PageLink from "@/components/newspaper/PageLink";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <div className="max-w-5xl mx-auto px-4 md:px-8 py-8">
-        <Masthead />
+    <PageLayout pageNumber={1} sectionName="Front Page" showMasthead={true} showFullMasthead={true}>
+      {/* Main Front Page Layout */}
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
         
-        <div className="flex gap-12">
-          <Sidebar />
+        {/* Lead Story - About Me */}
+        <article className="md:col-span-8 md:border-r md:border-border-light md:pr-6">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-black leading-tight mb-4 uppercase">
+            On Curiosity, Code, and the Human Mind
+          </h2>
           
-          <main className="flex-1 max-w-2xl">
-            {/* SELF SECTION */}
-            <section id="self" className="scroll-mt-8 mb-12">
-              <ArticleCard
-                variant="feature"
-                title="On Curiosity, Code, and the Human Mind"
-                summary="Amine Moulai is a L3 computer science student at Université de Perpignan, specializing in AI and automation. He is passionate about machine learning, algorithms, and systems, and enjoys building concrete projects that make everyday user tasks simpler. His interests also extend to game development, psychology, and the links between AI, cognition, and human behavior, with a focus on thinking critically about how intelligent systems interact with people."
-              />
-              <div className="border-t border-border mt-8" />
-            </section>
+          <p className="font-body text-sm uppercase tracking-widest text-muted-foreground mb-4 border-b border-border-light pb-2">
+            An Introduction to the Author
+          </p>
 
-            {/* PROJECTS SECTION */}
-            <SectionHeader title="Projects" id="projects" />
-            
-            {/* University Projects */}
-            <div className="mb-8">
-              <h3 className="font-display text-sm uppercase tracking-widest text-muted-foreground mb-4 border-b border-border-light pb-2">
-                University / Degree Projects
+          {/* Main Photo with Caption */}
+          <figure className="mb-6">
+            <div className="aspect-[4/3] bg-muted border border-border flex items-center justify-center">
+              <span className="text-muted-foreground text-sm font-body italic">
+                [ Author Portrait ]
+              </span>
+            </div>
+            <figcaption className="text-xs font-body text-muted-foreground mt-2 italic border-b border-border-light pb-2">
+              Amine Moulai at Université de Perpignan, 2025. — Personal Archive
+            </figcaption>
+          </figure>
+          
+          <div className="font-body text-base leading-relaxed space-y-4">
+            <p className="drop-cap">
+              Amine Moulai is a L3 computer science student at Université de Perpignan, specializing in AI and automation. He is passionate about machine learning, algorithms, and systems, and enjoys building concrete projects that make everyday user tasks simpler.
+            </p>
+            <p>
+              His interests also extend to game development, psychology, and the links between AI, cognition, and human behavior, with a focus on thinking critically about how intelligent systems interact with people.
+            </p>
+            <p className="text-sm text-muted-foreground italic">
+              — Continued on the Essays page
+            </p>
+          </div>
+        </article>
+
+        {/* Right Column - Press & Projects Teaser */}
+        <aside className="md:col-span-4">
+          <div className="border-t-2 border-b border-foreground py-2 mb-4">
+            <h3 className="font-display text-sm uppercase tracking-[0.2em] font-bold">
+              Press & Projects
+            </h3>
+          </div>
+          
+          {/* Featured Project Teasers */}
+          <div className="space-y-4">
+            <article className="pb-4 border-b border-border-light">
+              <PageLink to="/projects">
+                <h4 className="font-display text-lg font-bold leading-tight mb-1">
+                  Psycho-robots
+                </h4>
+              </PageLink>
+              <p className="text-sm text-muted-foreground font-body">
+                Multi-agent simulation exploring collective behavior through psychological modeling.
+              </p>
+              <span className="text-xs text-muted-foreground uppercase tracking-wide">
+                2025 · AI Research
+              </span>
+            </article>
+
+            <article className="pb-4 border-b border-border-light">
+              <PageLink to="/projects">
+                <h4 className="font-display text-lg font-bold leading-tight mb-1">
+                  RV32I & Carcassonne
+                </h4>
+              </PageLink>
+              <p className="text-sm text-muted-foreground font-body">
+                32-bit RISC-V processor design combined with strategic game development.
+              </p>
+              <span className="text-xs text-muted-foreground uppercase tracking-wide">
+                2024 · Hardware
+              </span>
+            </article>
+
+            <article className="pb-4 border-b border-border-light">
+              <PageLink to="/projects">
+                <h4 className="font-display text-lg font-bold leading-tight mb-1">
+                  Python Games
+                </h4>
+              </PageLink>
+              <p className="text-sm text-muted-foreground font-body">
+                Collection of interactive games exploring algorithms and player input.
+              </p>
+              <span className="text-xs text-muted-foreground uppercase tracking-wide">
+                2023–2024 · Game Dev
+              </span>
+            </article>
+          </div>
+
+          <PageLink to="/projects" className="block text-sm font-display uppercase tracking-widest mt-4 text-center py-2 border border-foreground hover:bg-foreground hover:text-background transition-colors">
+            Turn to Projects →
+          </PageLink>
+        </aside>
+      </div>
+
+      {/* Bottom Section - Essays & Reading Teasers */}
+      <div className="mt-8 pt-6 border-t-2 border-foreground">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          {/* Essays Column */}
+          <div className="md:border-r md:border-border-light md:pr-6">
+            <div className="border-b border-foreground pb-2 mb-4">
+              <h3 className="font-display text-xl uppercase tracking-wide font-bold">
+                Opinion & Essays
               </h3>
-              
-              <ArticleCard
-                title="Psycho-robots"
-                summary="Simulation of heterogeneous robots on a 2D grid that explore, cooperate, and handle conflicts to model collective behavior inspired by psychology."
-                meta="2025 · Developer · C/C++, Python"
-                links={[
-                  { label: "GitHub", href: "#", external: true },
-                  { label: "Demo", href: "#", external: true }
-                ]}
-              />
-              
-              <ArticleCard
-                title="RV32I & Carcassonne"
-                summary="Design of a 32-bit RISC-V processor and an associated strategic game, combining hardware architecture work with software logic in a team setting."
-                meta="2024 · Developer · VHDL, C/C++"
-                links={[
-                  { label: "Read more", href: "#" }
-                ]}
-              />
-              
-              <ArticleCard
-                title="Python Games"
-                summary="Development of small games in Python with basic GUIs, focusing on game algorithms, state management, and data structures."
-                meta="2023–2024 · Developer · Python, Tkinter"
-                links={[
-                  { label: "GitHub", href: "#", external: true }
-                ]}
-              />
-              
-              <ArticleCard
-                title="Automotive Automation & Book Platform"
-                summary="Automation of processes for the automotive sector and a community book platform, setting up online management and automation tools."
-                meta="2024 · Developer · n8n, Web Stack"
-                links={[
-                  { label: "Read more", href: "#" }
-                ]}
-              />
+            </div>
+            
+            <div className="space-y-3">
+              <article>
+                <PageLink to="/essays/ai-habits-attention">
+                  <h4 className="font-display font-bold leading-tight">
+                    AI, Habits, and Human Attention
+                  </h4>
+                </PageLink>
+                <p className="text-sm text-muted-foreground font-body">
+                  How automation shapes daily behavior and cognitive load.
+                </p>
+              </article>
+
+              <article>
+                <PageLink to="/essays/cooperative-agents">
+                  <h4 className="font-display font-bold leading-tight">
+                    Psychology of Cooperative Agents
+                  </h4>
+                </PageLink>
+                <p className="text-sm text-muted-foreground font-body">
+                  Reflections inspired by the Psycho-robots simulation.
+                </p>
+              </article>
+
+              <article>
+                <PageLink to="/essays/spiritual-intelligence-ml">
+                  <h4 className="font-display font-bold leading-tight">
+                    Spiritual Intelligence and Machine Learning
+                  </h4>
+                </PageLink>
+                <p className="text-sm text-muted-foreground font-body">
+                  Early thoughts on Islamic psychology and AI models.
+                </p>
+              </article>
             </div>
 
-            {/* AI Projects */}
-            <div className="mb-8">
-              <h3 className="font-display text-sm uppercase tracking-widest text-muted-foreground mb-4 border-b border-border-light pb-2">
-                Artificial Intelligence
+            <PageLink to="/essays" className="text-sm uppercase tracking-widest mt-4 block">
+              Read all essays →
+            </PageLink>
+          </div>
+
+          {/* Reading Column */}
+          <div className="md:pl-6">
+            <div className="border-b border-foreground pb-2 mb-4">
+              <h3 className="font-display text-xl uppercase tracking-wide font-bold">
+                Literature & Reading
               </h3>
-              
-              <ArticleCard
-                title="Psycho-robots (AI Focus)"
-                summary="Multi-agent simulation exploring emergent behaviors, cooperation strategies, and conflict resolution through psychological modeling principles."
-                meta="2025 · ML Experiments · Python"
-              />
+            </div>
+            
+            <div className="space-y-3">
+              <article>
+                <h4 className="font-display font-bold leading-tight">
+                  Thinking, Fast and Slow
+                </h4>
+                <p className="text-xs text-muted-foreground italic font-body">
+                  Daniel Kahneman
+                </p>
+                <p className="text-sm text-muted-foreground font-body">
+                  System 1 vs System 2 thinking; how biases appear in decisions.
+                </p>
+              </article>
+
+              <article>
+                <h4 className="font-display font-bold leading-tight">
+                  Deep Learning
+                </h4>
+                <p className="text-xs text-muted-foreground italic font-body">
+                  Goodfellow, Bengio, Courville
+                </p>
+                <p className="text-sm text-muted-foreground font-body">
+                  Core architectures and training methods for neural networks.
+                </p>
+              </article>
             </div>
 
-            {/* Game Dev Projects */}
-            <div className="mb-8">
-              <h3 className="font-display text-sm uppercase tracking-widest text-muted-foreground mb-4 border-b border-border-light pb-2">
-                Game Development
-              </h3>
-              
-              <ArticleCard
-                title="Python Mini-Games Collection"
-                summary="A collection of interactive games built to explore game algorithms, player input handling, and visual feedback systems."
-                meta="2023–2024 · Python, Pygame"
-              />
-              
-              <ArticleCard
-                title="Godot Prototype"
-                summary="Experimental game prototype exploring 2D mechanics and player interactions using the Godot engine."
-                meta="Ongoing · GDScript, Godot 4"
-              />
-            </div>
-
-            {/* ESSAYS SECTION */}
-            <SectionHeader title="Essays" id="essays" />
-            
-            <div className="space-y-1">
-              <ArticleCard
-                variant="list"
-                title="AI, Habits, and Human Attention"
-                summary="How automation shapes daily behavior and cognitive load."
-                to="/essays/ai-habits-attention"
-              />
-              
-              <ArticleCard
-                variant="list"
-                title="Psychology of Cooperative Agents"
-                summary="Reflections inspired by the Psycho-robots simulation."
-                to="/essays/cooperative-agents"
-              />
-              
-              <ArticleCard
-                variant="list"
-                title="Spiritual Intelligence and Machine Learning"
-                summary="Early thoughts on links between Islamic psychology and AI models."
-                to="/essays/spiritual-intelligence-ml"
-              />
-            </div>
-
-            {/* READING SECTION */}
-            <SectionHeader title="Reading" id="reading" />
-            
-            <BookCard
-              title="Thinking, Fast and Slow"
-              author="Daniel Kahneman"
-              insights={[
-                "System 1 vs System 2 thinking; how biases appear in everyday decisions.",
-                "Helps reflect on parallels between human heuristics and algorithmic shortcuts."
-              ]}
-            />
-            
-            <BookCard
-              title="Deep Learning"
-              author="Ian Goodfellow, Yoshua Bengio, Aaron Courville"
-              insights={[
-                "Core architectures and training methods for modern neural networks.",
-                "Clarifies foundations for future ML projects."
-              ]}
-            />
-
-            <Footer />
-          </main>
+            <PageLink to="/reading" className="text-sm uppercase tracking-widest mt-4 block">
+              Full reading list →
+            </PageLink>
+          </div>
         </div>
       </div>
-    </div>
+
+      {/* Contact Teaser */}
+      <div className="mt-8 pt-4 border-t border-border text-center">
+        <PageLink to="/contact" className="inline-block border-2 border-foreground px-6 py-3 font-display uppercase tracking-widest text-sm hover:bg-foreground hover:text-background transition-colors">
+          Write a Letter to the Editor →
+        </PageLink>
+      </div>
+    </PageLayout>
   );
 };
 

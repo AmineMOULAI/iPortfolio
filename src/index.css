@@ -4,91 +4,93 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500&display=swap');
 
-/* Vintage Newspaper Design System - All colors in HSL */
+/* Pure Black & White Newspaper Design System */
 
 @layer base {
   :root {
-    /* Off-white newspaper background */
-    --background: 45 33% 97%;
-    --foreground: 0 0% 10%;
+    /* Pure off-white paper background */
+    --background: 40 20% 96%;
+    --foreground: 0 0% 8%;
 
     /* Card surfaces */
-    --card: 45 33% 97%;
-    --card-foreground: 0 0% 10%;
+    --card: 40 20% 96%;
+    --card-foreground: 0 0% 8%;
 
-    --popover: 45 33% 97%;
-    --popover-foreground: 0 0% 10%;
+    --popover: 40 20% 96%;
+    --popover-foreground: 0 0% 8%;
 
-    /* Primary - near black */
-    --primary: 0 0% 10%;
-    --primary-foreground: 45 33% 97%;
+    /* Primary - pure black */
+    --primary: 0 0% 8%;
+    --primary-foreground: 40 20% 96%;
 
     /* Secondary - light gray */
-    --secondary: 0 0% 95%;
-    --secondary-foreground: 0 0% 10%;
+    --secondary: 0 0% 92%;
+    --secondary-foreground: 0 0% 8%;
 
     /* Muted - gray tones for meta info */
-    --muted: 0 0% 92%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 35%;
 
     /* Accent - slightly darker gray */
-    --accent: 0 0% 88%;
-    --accent-foreground: 0 0% 10%;
+    --accent: 0 0% 85%;
+    --accent-foreground: 0 0% 8%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 0% 30%;
     --destructive-foreground: 0 0% 98%;
 
     /* Borders and dividers */
-    --border: 0 0% 75%;
-    --border-light: 0 0% 85%;
-    --input: 0 0% 75%;
-    --ring: 0 0% 10%;
+    --border: 0 0% 20%;
+    --border-light: 0 0% 70%;
+    --border-medium: 0 0% 50%;
+    --input: 0 0% 70%;
+    --ring: 0 0% 8%;
 
     --radius: 0;
 
     /* Sidebar navigation */
-    --sidebar-background: 45 33% 97%;
-    --sidebar-foreground: 0 0% 10%;
-    --sidebar-primary: 0 0% 10%;
-    --sidebar-primary-foreground: 45 33% 97%;
-    --sidebar-accent: 0 0% 92%;
-    --sidebar-accent-foreground: 0 0% 10%;
-    --sidebar-border: 0 0% 75%;
-    --sidebar-ring: 0 0% 10%;
+    --sidebar-background: 40 20% 96%;
+    --sidebar-foreground: 0 0% 8%;
+    --sidebar-primary: 0 0% 8%;
+    --sidebar-primary-foreground: 40 20% 96%;
+    --sidebar-accent: 0 0% 90%;
+    --sidebar-accent-foreground: 0 0% 8%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 0 0% 8%;
 
-    /* Typography scale */
+    /* Typography */
     --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
     --font-body: 'Source Serif 4', Georgia, 'Times New Roman', serif;
   }
 
-  /* No dark mode - newspaper is always light */
+  /* Keep light mode always */
   .dark {
-    --background: 45 33% 97%;
-    --foreground: 0 0% 10%;
-    --card: 45 33% 97%;
-    --card-foreground: 0 0% 10%;
-    --popover: 45 33% 97%;
-    --popover-foreground: 0 0% 10%;
-    --primary: 0 0% 10%;
-    --primary-foreground: 45 33% 97%;
-    --secondary: 0 0% 95%;
-    --secondary-foreground: 0 0% 10%;
-    --muted: 0 0% 92%;
-    --muted-foreground: 0 0% 40%;
-    --accent: 0 0% 88%;
-    --accent-foreground: 0 0% 10%;
-    --border: 0 0% 75%;
-    --border-light: 0 0% 85%;
-    --input: 0 0% 75%;
-    --ring: 0 0% 10%;
-    --sidebar-background: 45 33% 97%;
-    --sidebar-foreground: 0 0% 10%;
-    --sidebar-primary: 0 0% 10%;
-    --sidebar-primary-foreground: 45 33% 97%;
-    --sidebar-accent: 0 0% 92%;
-    --sidebar-accent-foreground: 0 0% 10%;
-    --sidebar-border: 0 0% 75%;
-    --sidebar-ring: 0 0% 10%;
+    --background: 40 20% 96%;
+    --foreground: 0 0% 8%;
+    --card: 40 20% 96%;
+    --card-foreground: 0 0% 8%;
+    --popover: 40 20% 96%;
+    --popover-foreground: 0 0% 8%;
+    --primary: 0 0% 8%;
+    --primary-foreground: 40 20% 96%;
+    --secondary: 0 0% 92%;
+    --secondary-foreground: 0 0% 8%;
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 35%;
+    --accent: 0 0% 85%;
+    --accent-foreground: 0 0% 8%;
+    --border: 0 0% 20%;
+    --border-light: 0 0% 70%;
+    --border-medium: 0 0% 50%;
+    --input: 0 0% 70%;
+    --ring: 0 0% 8%;
+    --sidebar-background: 40 20% 96%;
+    --sidebar-foreground: 0 0% 8%;
+    --sidebar-primary: 0 0% 8%;
+    --sidebar-primary-foreground: 40 20% 96%;
+    --sidebar-accent: 0 0% 90%;
+    --sidebar-accent-foreground: 0 0% 8%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 0 0% 8%;
   }
 }
 
@@ -111,12 +113,12 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.15;
   }
 
-  /* Text link styling */
+  /* Text links - no color, underline only */
   a {
-    @apply text-foreground transition-colors duration-200;
+    @apply text-foreground transition-all duration-200;
   }
 
   a:hover {
@@ -125,7 +127,7 @@
 }
 
 @layer components {
-  /* Newspaper horizontal rule */
+  /* Newspaper horizontal rules */
   .newspaper-rule {
     @apply border-t border-border;
   }
@@ -135,12 +137,62 @@
   }
 
   .newspaper-rule-double {
-    @apply border-t-2 border-double border-foreground;
+    border-top: 3px double hsl(var(--foreground));
+  }
+
+  .newspaper-rule-thin {
+    @apply border-t border-border-light;
   }
 
   /* Article link styling */
   .article-link {
     @apply underline underline-offset-2 decoration-muted-foreground/50 hover:decoration-foreground transition-colors;
+  }
+
+  /* Newspaper column grid */
+  .newspaper-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .newspaper-grid-2 {
+    @apply newspaper-grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .newspaper-grid-3 {
+    @apply newspaper-grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .newspaper-grid-4 {
+    @apply newspaper-grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Column separator */
+  .column-rule {
+    @apply border-l border-border-light pl-6;
+  }
+
+  /* Drop cap for articles */
+  .drop-cap::first-letter {
+    @apply float-left text-6xl font-display font-bold leading-none mr-2 mt-1;
+  }
+
+  /* Page container */
+  .newspaper-page {
+    @apply min-h-screen bg-background relative;
+  }
+
+  /* Page number styling */
+  .page-number {
+    @apply fixed bottom-4 right-4 text-xs font-body text-muted-foreground uppercase tracking-widest;
+  }
+
+  /* Masthead volume info */
+  .volume-info {
+    @apply text-xs uppercase tracking-[0.2em] text-muted-foreground;
   }
 }
 
@@ -151,5 +203,68 @@
 
   .font-body {
     font-family: var(--font-body);
+  }
+
+  /* Page turn animation */
+  .page-enter {
+    animation: pageEnter 0.4s ease-out forwards;
+  }
+
+  .page-exit {
+    animation: pageExit 0.3s ease-in forwards;
+  }
+
+  @keyframes pageEnter {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes pageExit {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+  }
+
+  /* Fade in animation */
+  .fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Letter paper texture */
+  .letter-paper {
+    background-color: hsl(45 30% 95%);
+    background-image: 
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 27px,
+        hsl(var(--border-light)) 27px,
+        hsl(var(--border-light)) 28px
+      );
+  }
+
+  /* Stamp effect */
+  .stamp {
+    @apply border-2 border-foreground p-2 rotate-[-8deg] hover:rotate-[-4deg] transition-transform cursor-pointer;
   }
 }
