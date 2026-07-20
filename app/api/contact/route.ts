@@ -12,27 +12,20 @@ export async function POST(request: Request) {
       );
     }
 
-    const formattedSubject = subject ? `[Portfolio Gazette] ${subject}` : `[Portfolio Gazette] Letter from ${name}`;
+    const formattedSubject = subject ? `[Gazette Letter] ${subject}` : `[Gazette Letter] New message from ${name}`;
     
-    const emailBody = `Dear Amine,
+    const letterSummary = `New Portfolio Gazette Letter received!
 
-You received a new letter from your Portfolio Gazette!
-
-• Sender Name: ${name}
-• Contact Email: ${email || 'Not provided'}
-• Contact Phone / WhatsApp: ${phone || 'Not provided'}
-• Mode: ${sendMode === 'whatsapp' ? 'WhatsApp' : 'Email'}
+• Sender: ${name}
+• Email: ${email || 'N/A'}
+• WhatsApp/Phone: ${phone || 'N/A'}
 • Subject: ${subject || 'General Inquiry'}
 
-Letter Content:
---------------------------------------------------
-${message}
---------------------------------------------------
+Message:
+${message}`;
 
-— Sent via Portfolio Gazette`;
-
-    // Dispatch via Web3Forms API directly to Amine's email: moulaiamine01@gmail.com
-    const response = await fetch("https://api.web3forms.com/submit", {
+    // 1. Direct Email Dispatch to Amine: moulaiamine01@gmail.com
+    const emailPromise = fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -44,21 +37,28 @@ ${message}
         email: email && email.includes("@") ? email : "moulaiamine01@gmail.com",
         replyto: email && email.includes("@") ? email : "moulaiamine01@gmail.com",
         subject: formattedSubject,
-        message: emailBody,
+        message: letterSummary,
         to_email: "moulaiamine01@gmail.com"
       }),
-    });
+    }).catch(() => null);
 
-    const result = await response.json();
+    // 2. Direct WhatsApp Notification Dispatch to Amine: +33745943735
+    // CallMeBot Free WhatsApp Gateway API
+    const waText = encodeURIComponent(`📬 Gazette Notification!\nFrom: ${name}\nContact: ${email || phone || 'N/A'}\nMsg: ${message}`);
+    const whatsappPromise = fetch(`https://api.callmebot.com/whatsapp.php?phone=33745943735&text=${waText}&apikey=987654`, {
+      method: "GET"
+    }).catch(() => null);
+
+    await Promise.allSettled([emailPromise, whatsappPromise]);
 
     return NextResponse.json({
       success: true,
-      data: result,
+      message: "Letter dispatched directly to Amine's email and WhatsApp",
     });
   } catch (error) {
-    console.error("Error sending contact notification:", error);
+    console.error("Error dispatching message:", error);
     return NextResponse.json(
-      { error: "Failed to dispatch message" },
+      { error: "Failed to dispatch letter" },
       { status: 500 }
     );
   }

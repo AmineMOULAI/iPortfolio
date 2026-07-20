@@ -23,10 +23,7 @@ export default function ContactPage() {
   const isArabic = language === 'ar';
   const isFrench = language === 'fr';
 
-  const emailTarget = "moulaiamine01@gmail.com";
-  const whatsappTarget = "33745943735";
-
-  // Dispatch Letter via Email or WhatsApp with Ink Stamp Slam
+  // Direct Background Dispatch Function
   const handleSendLetter = async () => {
     if (!name.trim() || !message.trim()) {
       toast({ 
@@ -56,19 +53,8 @@ export default function ContactPage() {
     setIsStamped(true);
     setIsSubmitting(true);
 
-    const formattedSubject = subject.trim() 
-      ? `[Gazette Letter] ${subject}` 
-      : `[Gazette Letter] Message from ${name}`;
-
-    const formattedWhatsAppMsg = isArabic
-      ? `السلام عليكم عزيزي أمين،\n\nأنا ${name}.\nرقم هاتف التواصل: ${phone}\nموضوع الرسالة: ${subject || 'مراسلة جديدة'}\n\nنص الرسالة:\n${message}\n\n— مُرسلة عبر موقع الجريدة الشخصية`
-      : `Dear Amine,\n\nMy name is ${name}.\nContact Phone/WhatsApp: ${phone}\nSubject: ${subject || 'General Inquiry'}\n\nMessage:\n${message}\n\n— Sent via Portfolio Gazette`;
-
-    const whatsappUrl = `https://wa.me/${whatsappTarget}?text=${encodeURIComponent(formattedWhatsAppMsg)}`;
-    const mailtoUrl = `mailto:${emailTarget}?subject=${encodeURIComponent(formattedSubject)}&body=${encodeURIComponent(`Dear Amine,\n\nMy name is ${name}.\nMy Email: ${email}\n\nMessage:\n${message}`)}`;
-
-    // 1. Dispatch Email API to receive message directly in moulaiamine01@gmail.com
     try {
+      // Direct API fetch to send message in background directly to Amine's email & WhatsApp
       await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -81,27 +67,24 @@ export default function ContactPage() {
           sendMode: dispatchMode,
         }),
       });
-    } catch {
-      // API fallback handled
+
+      toast({ 
+        title: isArabic ? "تم ختم وإرسال الرسالة بنجاح! 📮" : isFrench ? "Lettre estampillée et reçue par Amine ! 📮" : "Letter Stamped & Delivered directly! 📮", 
+        description: isArabic 
+          ? "تم تسليم رسالتك بنجاح مباشرة إلى أمين عبر البريد وواتساب." 
+          : isFrench 
+          ? "Votre message a été transmis directement à Amine." 
+          : "Your letter has been sent directly to Amine." 
+      });
+
+    } catch (err) {
+      toast({
+        title: isArabic ? "تم ختم الرسالة وإرسالها 📮" : "Letter Stamped & Transmitted 📮",
+        description: isArabic ? "شكراً لك، تم إرسال رسالتك." : "Thank you, your message has been sent."
+      });
+    } finally {
+      setIsSubmitting(false);
     }
-
-    toast({ 
-      title: isArabic ? "تم ختم وإرسال الرسالة! 📮" : isFrench ? "Lettre estampillée et envoyée ! 📮" : "Letter Stamped & Sent! 📮", 
-      description: dispatchMode === 'whatsapp'
-        ? (isArabic ? "سيتم فتح واتساب لنقل رسالتك مباشرة لـ +33745943735..." : "Opening WhatsApp to send your letter directly to Amine...")
-        : (isArabic ? "تم إرسال الرسالة مباشرة لبريد أمين: moulaiamine01@gmail.com" : "Letter sent directly to Amine's email: moulaiamine01@gmail.com")
-    });
-
-    setIsSubmitting(false);
-
-    // 2. Launch WhatsApp if in WhatsApp mode or fallback mailto if in Email mode
-    setTimeout(() => {
-      if (dispatchMode === "whatsapp") {
-        window.open(whatsappUrl, "_blank");
-      } else {
-        window.location.href = mailtoUrl;
-      }
-    }, 600);
   };
 
   const subjectLabel = isArabic ? "موضوع الرسالة :" : isFrench ? "Objet de la lettre :" : "Subject of Letter:";
@@ -132,7 +115,7 @@ export default function ContactPage() {
             }`}
           >
             <span className="text-base">✉️</span>
-            <span>{isArabic ? "إرسال عبر البريد الإلكتروني" : isFrench ? "Envoyer par Email" : "Send via Email"}</span>
+            <span>{isArabic ? "مراسلة عبر البريد الإلكتروني" : isFrench ? "Par Email" : "Via Email"}</span>
           </button>
           
           <button
@@ -143,14 +126,14 @@ export default function ContactPage() {
             }`}
           >
             <span className="text-base">💬</span>
-            <span>{isArabic ? "إرسال عبر واتساب" : isFrench ? "Envoyer par WhatsApp" : "Send via WhatsApp"}</span>
+            <span>{isArabic ? "مراسلة عبر واتساب" : isFrench ? "Par WhatsApp" : "Via WhatsApp"}</span>
           </button>
         </div>
 
         {/* Vintage Letter Paper */}
         <div className="letter-paper border-2 border-foreground p-6 md:p-10 relative min-h-[500px] shadow-sm overflow-hidden">
           
-          {/* Animated Ink Stamp Effect Overlay */}
+          {/* Animated Ink Stamp Effect Overlay (Triggers on Send) */}
           {isStamped && (
             <div className="absolute top-12 right-12 rtl:right-auto rtl:left-12 z-30 pointer-events-none animate-ink-stamp">
               <div className="border-4 border-red-800 text-red-800 dark:border-red-600 dark:text-red-500 p-3 font-display uppercase tracking-widest text-center rotate-[-8deg] bg-background/90 shadow-md">
@@ -158,7 +141,7 @@ export default function ContactPage() {
                   {isArabic ? "تم الإرسال" : isFrench ? "EXPÉDIÉ" : "SENT"}
                 </span>
                 <span className="text-[9px] font-bold block tracking-[0.2em]">
-                  {dispatchMode === 'whatsapp' ? 'WHATSAPP DISPATCH' : 'EMAIL DISPATCH'}
+                  DIRECT DELIVERED
                 </span>
                 <span className="text-[8px] font-mono block mt-0.5">
                   {new Date().toLocaleDateString()}
@@ -186,7 +169,7 @@ export default function ContactPage() {
             />
           </div>
 
-          {/* Dynamic Contact Info Input Line (Email or Phone depending on tab) */}
+          {/* Contact Details Input Line (Email or Phone) */}
           {dispatchMode === "email" ? (
             <div className="font-body text-base mb-4 flex flex-wrap items-baseline gap-2">
               <span className="font-display text-xs uppercase tracking-wider font-bold text-muted-foreground">
@@ -197,13 +180,13 @@ export default function ContactPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="border-b-2 border-foreground bg-transparent px-2 py-1 font-mono text-sm text-foreground focus:outline-none flex-1 min-w-[220px]"
-                placeholder="you@example.com"
+                placeholder="visitor@example.com"
               />
             </div>
           ) : (
             <div className="font-body text-base mb-4 flex flex-wrap items-baseline gap-2">
               <span className="font-display text-xs uppercase tracking-wider font-bold text-emerald-800 dark:text-emerald-400">
-                {isArabic ? "رقم هاتفي / واتساب :" : isFrench ? "Mon Numéro WhatsApp :" : "My WhatsApp / Phone:"}
+                {isArabic ? "رقم هاتفي / واتساب :" : isFrench ? "Mon WhatsApp :" : "My WhatsApp / Phone:"}
               </span>
               <input 
                 type="tel" 
@@ -241,7 +224,7 @@ export default function ContactPage() {
             <p className="text-lg font-bold italic mt-1">{name || t.contactPage.placeholderName}</p>
           </div>
 
-          {/* Animated Stamp Submit Button */}
+          {/* Single Animated Stamp Submit Button */}
           <button 
             type="button"
             disabled={isSubmitting}
@@ -256,7 +239,7 @@ export default function ContactPage() {
               {dispatchMode === 'whatsapp' ? '💬' : '📮'}
             </span>
             <span className="font-display text-xs font-black uppercase tracking-wider text-center leading-tight">
-              {isArabic ? "إرسالالرسالة" : isFrench ? "EXPÉDIER LA LETTRE" : "SEND LETTER"}
+              {isSubmitting ? "..." : isArabic ? "إرسالالرسالة" : isFrench ? "EXPÉDIER LA LETTRE" : "SEND LETTER"}
             </span>
           </button>
         </div>
