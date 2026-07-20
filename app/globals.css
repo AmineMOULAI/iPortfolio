@@ -1,0 +1,486 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800&family=Reem+Kufi:wght@500;700;800&family=Scheherazade+New:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500&display=swap');
+
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap");
+
+/* International Newspaper Typography Systems */
+
+/* 1. English (New York Times Newspaper Style: Imperial / Cheltenham / Libre Baskerville) */
+html[lang="en"] {
+  font-family: 'Libre Baskerville', 'Source Serif 4', Georgia, serif;
+}
+html[lang="en"] .font-display {
+  font-family: 'Playfair Display', 'Libre Baskerville', Georgia, serif;
+}
+html[lang="en"] .font-body {
+  font-family: 'Libre Baskerville', 'Source Serif 4', Georgia, serif;
+}
+
+/* 2. French (Le Monde Newspaper Style: Le Monde Journal / EB Garamond / Cormorant) */
+html[lang="fr"] {
+  font-family: 'EB Garamond', 'Source Serif 4', Garamond, serif;
+}
+html[lang="fr"] .font-display {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Garamond, serif;
+}
+html[lang="fr"] .font-body {
+  font-family: 'EB Garamond', 'Source Serif 4', Garamond, serif;
+}
+
+/* 3. Arabic (Enhanced Classical Press & Calligraphic Kufi/Naskh) */
+html[dir="rtl"], html[lang="ar"], body.rtl-arabic {
+  font-family: 'Noto Naskh Arabic', 'Amiri', 'Scheherazade New', 'Cairo', serif;
+  line-height: 1.85;
+}
+
+html[dir="rtl"] .font-display, html[lang="ar"] .font-display {
+  font-family: 'Reem Kufi', 'Readex Pro', 'Cairo', 'Amiri', serif;
+  letter-spacing: 0em;
+}
+
+html[dir="rtl"] .font-body, html[lang="ar"] .font-body {
+  font-family: 'Noto Naskh Arabic', 'Amiri', 'Scheherazade New', serif;
+}
+
+html[dir="rtl"] .drop-cap::first-letter, html[lang="ar"] .drop-cap::first-letter {
+  float: right;
+  margin-left: 0.75rem;
+  margin-right: 0;
+  font-family: 'Reem Kufi', 'Amiri Quran', serif;
+  font-weight: 800;
+}
+
+/* Calligraphy & Quranic Verses / Islamic Quotes Styling */
+.font-quran, .quranic-verse, .arabic-quote {
+  font-family: 'Amiri Quran', 'Scheherazade New', 'Noto Naskh Arabic', 'Amiri', serif;
+  font-size: 1.25rem;
+  line-height: 2.3;
+  letter-spacing: 0em;
+  font-weight: 500;
+}
+
+.font-calligraphy {
+  font-family: 'Reem Kufi', 'Amiri Quran', 'Readex Pro', 'Cairo', serif;
+  font-weight: 700;
+}
+
+.quran-calligraphy-frame {
+  border-right: 4px solid hsl(var(--foreground));
+  background-color: rgba(210, 180, 120, 0.12);
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 2px;
+  position: relative;
+}
+
+html[dir="ltr"] .quran-calligraphy-frame {
+  border-right: none;
+  border-left: 4px solid hsl(var(--foreground));
+}
+
+
+/* Pure Black & White Newspaper Design System */
+
+@layer base {
+  :root {
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Source Serif 4', 'Source Serif Pro', Georgia, serif;
+    --font-sans: 'Source Sans 3', 'Source Sans Pro', system-ui, sans-serif;
+    --font-mono: 'Source Code Pro', monospace;
+
+    /* Pure off-white paper background */
+    --background: 60 4% 95%;
+    --foreground: 24 9% 10%;
+
+    /* Card surfaces */
+    --card: 60 9% 97%;
+    --card-foreground: 24 9% 10%;
+
+    --popover: 20 5% 90%;
+    --popover-foreground: 24 9% 10%;
+
+    /* Primary - pure black */
+    --primary: 37 92% 50%;
+    --primary-foreground: 47 100% 96%;
+
+    /* Secondary - light gray */
+    --secondary: 24 5% 44%;
+    --secondary-foreground: 60 9% 97%;
+
+    /* Muted - gray tones for meta info */
+    --muted: 23 5% 82%;
+    --muted-foreground: 24 9% 10%;
+
+    /* Accent - slightly darker gray */
+    --accent: 47 100% 96%;
+    --accent-foreground: 37 92% 50%;
+
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 85% 97%;
+
+    /* Borders and dividers */
+    --border: 23 5% 82%;
+    --border-light: 0 0% 70%;
+    --border-medium: 0 0% 50%;
+    --input: 23 5% 82%;
+    --ring: 37 92% 50%;
+
+    --radius: 1rem;
+
+    /* Sidebar navigation */
+    --sidebar-background: 40 20% 96%;
+    --sidebar-foreground: 24 9% 10%;
+    --sidebar-primary: 37 92% 50%;
+    --sidebar-primary-foreground: 47 100% 96%;
+    --sidebar-accent: 24 5% 44%;
+    --sidebar-accent-foreground: 60 9% 97%;
+    --sidebar-border: 23 5% 82%;
+    --sidebar-ring: 37 92% 50%;
+
+    /* Typography */
+    --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    --font-body: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    --chart-1: 45 96% 64%;
+    --chart-2: 47 95% 53%;
+    --chart-3: 43 96% 56%;
+    --chart-4: 37 92% 50%;
+    --chart-5: 24 5% 44%;
+    --sidebar: 60 9% 97%;
+    --font-sans: 'Source Sans Pro', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    --font-serif: 'Source Serif Pro', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+    --font-mono: 'Source Code Pro', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+    --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
+    --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+    --tracking-normal: 0em;
+    --spacing: 0.25rem;
+  }
+
+  /* Keep light mode always */
+  .dark {
+    --background: 24 9% 10%;
+    --foreground: 60 9% 97%;
+    --card: 12 6% 15%;
+    --card-foreground: 60 9% 97%;
+    --popover: 30 6% 25%;
+    --popover-foreground: 60 9% 97%;
+    --primary: 43 96% 56%;
+    --primary-foreground: 20 91% 14%;
+    --secondary: 24 5% 44%;
+    --secondary-foreground: 60 9% 97%;
+    --muted: 24 5% 44%;
+    --muted-foreground: 60 9% 97%;
+    --accent: 25 83% 14%;
+    --accent-foreground: 47 95% 53%;
+    --border: 33 5% 32%;
+    --border-light: 0 0% 70%;
+    --border-medium: 0 0% 50%;
+    --input: 33 5% 32%;
+    --ring: 43 96% 56%;
+    --sidebar-background: 40 20% 96%;
+    --sidebar-foreground: 60 9% 97%;
+    --sidebar-primary: 43 96% 56%;
+    --sidebar-primary-foreground: 20 91% 14%;
+    --sidebar-accent: 47 95% 53%;
+    --sidebar-accent-foreground: 25 83% 14%;
+    --sidebar-border: 33 5% 32%;
+    --sidebar-ring: 43 96% 56%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 85% 97%;
+    --chart-1: 45 96% 64%;
+    --chart-2: 48 96% 76%;
+    --chart-3: 43 96% 56%;
+    --chart-4: 37 92% 50%;
+    --chart-5: 33 5% 32%;
+    --sidebar: 12 6% 15%;
+    --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+    --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
+    --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.15;
+  }
+
+  a {
+    @apply text-foreground transition-all duration-200;
+  }
+
+  a:hover {
+    @apply text-muted-foreground;
+  }
+}
+
+@layer components {
+  /* Newspaper horizontal rules */
+  .newspaper-rule {
+    @apply border-t border-border;
+  }
+
+  .newspaper-rule-thick {
+    @apply border-t-2 border-foreground;
+  }
+
+  .newspaper-rule-double {
+    border-top: 3px double hsl(var(--foreground));
+  }
+
+  .newspaper-rule-thin {
+    @apply border-t border-border-light;
+  }
+
+  /* Article link styling */
+  .article-link {
+    @apply underline underline-offset-2 decoration-muted-foreground/50 hover:decoration-foreground transition-colors;
+  }
+
+  /* Newspaper column grid */
+  .newspaper-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .newspaper-grid-2 {
+    @apply newspaper-grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .newspaper-grid-3 {
+    @apply newspaper-grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .newspaper-grid-4 {
+    @apply newspaper-grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Column separator */
+  .column-rule {
+    @apply border-l border-border-light pl-6;
+  }
+
+  /* Drop cap for articles */
+  .drop-cap::first-letter {
+    @apply float-left text-6xl font-display font-bold leading-none mr-2 mt-1;
+  }
+
+  /* Page container */
+  .newspaper-page {
+    @apply min-h-screen bg-background relative overflow-hidden;
+    box-shadow: inset 15px 0 30px -15px rgba(0,0,0,0.2);
+  }
+
+  /* Page number styling */
+  .page-number {
+    @apply fixed bottom-4 right-4 text-xs font-body text-muted-foreground uppercase tracking-widest;
+  }
+
+  /* Masthead volume info */
+  .volume-info {
+    @apply text-xs uppercase tracking-[0.2em] text-muted-foreground;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  /* Realistic 3D Newspaper Viewport & Page Fold Animation */
+  .newspaper-viewport {
+    perspective: 2500px;
+    perspective-origin: 50% 50%;
+    overflow: hidden;
+    position: relative;
+    background-color: hsl(var(--background));
+  }
+
+  .newspaper-page-fold {
+    transform-style: preserve-3d;
+    transform-origin: left center;
+    backface-visibility: hidden;
+    will-change: transform, filter, box-shadow;
+    animation: newspaper-fold-enter 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    position: relative;
+    z-index: 10;
+  }
+
+  [dir="rtl"] .newspaper-page-fold {
+    transform-origin: right center;
+    animation-name: newspaper-fold-enter-rtl;
+  }
+
+  /* Authentic Spine Crease Shadow along the folded binding */
+  .newspaper-page-fold::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 35px;
+    background: linear-gradient(90deg, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0.1) 40%, transparent 100%);
+    pointer-events: none;
+    z-index: 40;
+  }
+
+  [dir="rtl"] .newspaper-page-fold::before {
+    left: auto;
+    right: 0;
+    background: linear-gradient(-90deg, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0.1) 40%, transparent 100%);
+  }
+
+  /* 3D Newspaper Opening / Unfolding Keyframes (LTR) */
+  @keyframes newspaper-fold-enter {
+    0% {
+      opacity: 0;
+      transform: rotateY(-85deg) rotateZ(-2.5deg) scale(0.92);
+      filter: brightness(0.35) contrast(1.35) drop-shadow(-30px 30px 35px rgba(0,0,0,0.55));
+    }
+    35% {
+      opacity: 0.85;
+      transform: rotateY(-40deg) rotateZ(-1deg) scale(0.96);
+      filter: brightness(0.75) contrast(1.12) drop-shadow(-18px 18px 22px rgba(0,0,0,0.4));
+    }
+    70% {
+      opacity: 0.98;
+      transform: rotateY(-6deg) rotateZ(-0.2deg) scale(0.99);
+      filter: brightness(1.06) contrast(1.02) drop-shadow(-6px 6px 12px rgba(0,0,0,0.2));
+    }
+    100% {
+      opacity: 1;
+      transform: rotateY(0deg) rotateZ(0deg) scale(1);
+      filter: brightness(1) contrast(1) drop-shadow(0 0 0 transparent);
+    }
+  }
+
+  /* 3D Newspaper Opening / Unfolding Keyframes (RTL) */
+  @keyframes newspaper-fold-enter-rtl {
+    0% {
+      opacity: 0;
+      transform: rotateY(85deg) rotateZ(2.5deg) scale(0.92);
+      filter: brightness(0.35) contrast(1.35) drop-shadow(30px 30px 35px rgba(0,0,0,0.55));
+    }
+    35% {
+      opacity: 0.85;
+      transform: rotateY(40deg) rotateZ(1deg) scale(0.96);
+      filter: brightness(0.75) contrast(1.12) drop-shadow(18px 18px 22px rgba(0,0,0,0.4));
+    }
+    70% {
+      opacity: 0.98;
+      transform: rotateY(6deg) rotateZ(0.2deg) scale(0.99);
+      filter: brightness(1.06) contrast(1.02) drop-shadow(6px 6px 12px rgba(0,0,0,0.2));
+    }
+    100% {
+      opacity: 1;
+      transform: rotateY(0deg) rotateZ(0deg) scale(1);
+      filter: brightness(1) contrast(1) drop-shadow(0 0 0 transparent);
+    }
+  }
+
+  .fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .letter-paper {
+    background-color: hsl(45 30% 95%);
+    background-image: 
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 27px,
+        hsl(var(--border-light)) 27px,
+        hsl(var(--border-light)) 28px
+      );
+  }
+
+  @keyframes quoteProgress {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  .animate-quote-progress {
+    animation: quoteProgress 10s linear forwards;
+  }
+
+  /* Authentic Press Ink Stamp Animation */
+  @keyframes ink-stamp-slam {
+    0% {
+      opacity: 0;
+      transform: scale(3.2) rotate(-25deg);
+      filter: blur(6px);
+    }
+    55% {
+      opacity: 0.95;
+      transform: scale(0.92) rotate(-7deg);
+      filter: blur(0px);
+    }
+    80% {
+      transform: scale(1.04) rotate(-5deg);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) rotate(-6deg);
+    }
+  }
+
+  .animate-ink-stamp {
+    animation: ink-stamp-slam 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+
+  .stamp {
+    @apply border-2 border-foreground p-2 rotate-[-8deg] hover:rotate-[-4deg] transition-transform cursor-pointer;
+  }
+}

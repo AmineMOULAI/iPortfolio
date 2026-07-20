@@ -15,19 +15,19 @@ export default {
   	extend: {
   		fontFamily: {
   			display: [
-  				'Playfair Display',
+  				'var(--font-display)',
   				'Georgia',
   				'Times New Roman',
   				'serif'
   			],
   			body: [
-  				'Source Serif 4',
+  				'var(--font-body)',
   				'Georgia',
   				'Times New Roman',
   				'serif'
   			],
   			sans: [
-  				'Source Sans Pro',
+  				'var(--font-sans)',
   				'ui-sans-serif',
   				'system-ui',
   				'-apple-system',
@@ -40,7 +40,7 @@ export default {
   				'sans-serif'
   			],
   			serif: [
-  				'Source Serif Pro',
+  				'var(--font-body)',
   				'ui-serif',
   				'Georgia',
   				'Cambria',
@@ -49,7 +49,7 @@ export default {
   				'serif'
   			],
   			mono: [
-  				'Source Code Pro',
+  				'var(--font-mono)',
   				'ui-monospace',
   				'SFMono-Regular',
   				'Menlo',
@@ -132,21 +132,21 @@ export default {
   			'page-turn': {
   				'0%': {
   					opacity: '0',
-  					transform: 'translateX(30px) rotateY(-5deg)'
+  					transform: 'perspective(1200px) rotateY(-10deg) translateX(50px) scale(0.95)'
   				},
   				'100%': {
   					opacity: '1',
-  					transform: 'translateX(0) rotateY(0deg)'
+  					transform: 'perspective(1200px) rotateY(0deg) translateX(0) scale(1)'
   				}
   			},
   			'page-exit': {
   				'0%': {
   					opacity: '1',
-  					transform: 'translateX(0)'
+  					transform: 'perspective(1200px) rotateY(0deg)'
   				},
   				'100%': {
   					opacity: '0',
-  					transform: 'translateX(-30px)'
+  					transform: 'perspective(1200px) rotateY(10deg) translateX(-50px) scale(0.95)'
   				}
   			}
   		},
