@@ -1,7 +1,14 @@
 {
-  "/page": "app/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/contact/page": "app/contact/page.js",
-  "/essays/[slug]/page": "app/essays/[slug]/page.js",
+  "/api/contact/route": "app/api/contact/route.js",
   "/essays/page": "app/essays/page.js",
-  "/essays/topic/[topic_id]/page": "app/essays/topic/[topic_id]/page.js"
+  "/icon.png/route": "app/icon.png/route.js",
+  "/page": "app/page.js",
+  "/projects/page": "app/projects/page.js",
+  "/reading/page": "app/reading/page.js",
+  "/essays/topic/[topic_id]/page": "app/essays/topic/[topic_id]/page.js",
+  "/essays/[slug]/page": "app/essays/[slug]/page.js",
+  "/projects/[slug]/page": "app/projects/[slug]/page.js",
+  "/reading/[slug]/page": "app/reading/[slug]/page.js"
 }

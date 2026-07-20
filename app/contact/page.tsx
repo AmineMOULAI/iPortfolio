@@ -8,10 +8,14 @@ import { useLanguage } from "@/context/LanguageContext";
 import { playPaperSound } from "@/utils/audio";
 
 export default function ContactPage() {
+  const [dispatchMode, setDispatchMode] = useState<"email" | "whatsapp">("email");
   const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [isStamped, setIsStamped] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const { toast } = useToast();
   const { t, language } = useLanguage();
@@ -20,55 +24,84 @@ export default function ContactPage() {
   const isFrench = language === 'fr';
 
   const emailTarget = "moulaiamine01@gmail.com";
-  const whatsappNumber = "33745943735";
+  const whatsappTarget = "33745943735";
 
-  // Dispatch Letter via API (Email) and WhatsApp with Ink Stamp Animation
+  // Dispatch Letter via Email or WhatsApp with Ink Stamp Slam
   const handleSendLetter = async () => {
     if (!name.trim() || !message.trim()) {
       toast({ 
-        title: isArabic ? "يرجى ملء جميع الحقول" : isFrench ? "Veuillez remplir les champs" : "Please fill in all required fields", 
+        title: isArabic ? "يرجى كتابة الاسم والرسالة" : isFrench ? "Veuillez indiquer votre nom et message" : "Please provide your name and message", 
         variant: "destructive" 
+      });
+      return;
+    }
+
+    if (dispatchMode === "email" && !email.trim()) {
+      toast({
+        title: isArabic ? "يرجى كتابة بريدك الإلكتروني" : isFrench ? "Veuillez indiquer votre adresse email" : "Please enter your email address",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    if (dispatchMode === "whatsapp" && !phone.trim()) {
+      toast({
+        title: isArabic ? "يرجى كتابة رقم هاتفك / واتساب" : isFrench ? "Veuillez indiquer votre numéro WhatsApp" : "Please enter your WhatsApp / phone number",
+        variant: "destructive"
       });
       return;
     }
 
     playPaperSound();
     setIsStamped(true);
+    setIsSubmitting(true);
 
-    const emailSubject = subject.trim() 
+    const formattedSubject = subject.trim() 
       ? `[Gazette Letter] ${subject}` 
       : `[Gazette Letter] Message from ${name}`;
 
-    const formattedMessage = isArabic
-      ? `السلام عليكم عزيزي أمين،\n\nأنا ${name}.\nموضوع الرسالة: ${subject || 'مراسلة جديدة'}\n\nنص الرسالة:\n${message}\n\n— مُرسلة عبر موقع الجريدة الشخصية`
-      : `Dear Amine,\n\nMy name is ${name}.\nSubject: ${subject || 'General Inquiry'}\n\nMessage:\n${message}\n\n— Sent via Portfolio Gazette`;
+    const formattedWhatsAppMsg = isArabic
+      ? `السلام عليكم عزيزي أمين،\n\nأنا ${name}.\nرقم هاتف التواصل: ${phone}\nموضوع الرسالة: ${subject || 'مراسلة جديدة'}\n\nنص الرسالة:\n${message}\n\n— مُرسلة عبر موقع الجريدة الشخصية`
+      : `Dear Amine,\n\nMy name is ${name}.\nContact Phone/WhatsApp: ${phone}\nSubject: ${subject || 'General Inquiry'}\n\nMessage:\n${message}\n\n— Sent via Portfolio Gazette`;
 
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(formattedMessage)}`;
+    const whatsappUrl = `https://wa.me/${whatsappTarget}?text=${encodeURIComponent(formattedWhatsAppMsg)}`;
+    const mailtoUrl = `mailto:${emailTarget}?subject=${encodeURIComponent(formattedSubject)}&body=${encodeURIComponent(`Dear Amine,\n\nMy name is ${name}.\nMy Email: ${email}\n\nMessage:\n${message}`)}`;
 
-    // Dispatch background email notification to moulaiamine01@gmail.com
+    // 1. Dispatch Email API to receive message directly in moulaiamine01@gmail.com
     try {
-      fetch("/api/contact", {
+      await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: name.trim(),
+          email: email.trim(),
+          phone: phone.trim(),
           subject: subject.trim(),
           message: message.trim(),
+          sendMode: dispatchMode,
         }),
-      }).catch(() => {});
+      });
     } catch {
-      // Ignore background fetch error
+      // API fallback handled
     }
 
     toast({ 
       title: isArabic ? "تم ختم وإرسال الرسالة! 📮" : isFrench ? "Lettre estampillée et envoyée ! 📮" : "Letter Stamped & Sent! 📮", 
-      description: isArabic ? "جاري فتح واتساب والبريد الإلكتروني لنقل رسالتك لأمين..." : "Sending message to Amine via Email & WhatsApp..." 
+      description: dispatchMode === 'whatsapp'
+        ? (isArabic ? "سيتم فتح واتساب لنقل رسالتك مباشرة لـ +33745943735..." : "Opening WhatsApp to send your letter directly to Amine...")
+        : (isArabic ? "تم إرسال الرسالة مباشرة لبريد أمين: moulaiamine01@gmail.com" : "Letter sent directly to Amine's email: moulaiamine01@gmail.com")
     });
 
-    // Launch WhatsApp
+    setIsSubmitting(false);
+
+    // 2. Launch WhatsApp if in WhatsApp mode or fallback mailto if in Email mode
     setTimeout(() => {
-      window.open(whatsappUrl, "_blank");
-    }, 500);
+      if (dispatchMode === "whatsapp") {
+        window.open(whatsappUrl, "_blank");
+      } else {
+        window.location.href = mailtoUrl;
+      }
+    }, 600);
   };
 
   const subjectLabel = isArabic ? "موضوع الرسالة :" : isFrench ? "Objet de la lettre :" : "Subject of Letter:";
@@ -84,15 +117,40 @@ export default function ContactPage() {
             {t.contactPage.title}
           </h1>
           <p className="font-display text-xs uppercase tracking-[0.25em] font-bold text-muted-foreground">
-            — {isArabic ? "قسم المراسلات والرسائل" : isFrench ? "Lettres à la Rédaction" : "Letters to the Editor"} —
+            — {isArabic ? "قسم المراسلات المباشرة" : isFrench ? "Correspondances Mails & WhatsApp" : "Direct Correspondence Bureau"} —
           </p>
           <div className="newspaper-rule-double max-w-sm mx-auto mt-3" />
+        </div>
+
+        {/* Dispatch Mode Selector Tabs */}
+        <div className="flex border-2 border-foreground bg-card mb-6 overflow-hidden">
+          <button
+            type="button"
+            onClick={() => { playPaperSound(); setDispatchMode("email"); }}
+            className={`flex-1 py-3 px-4 font-display text-xs uppercase tracking-widest font-bold flex items-center justify-center gap-2 transition-colors cursor-pointer ${
+              dispatchMode === "email" ? "bg-foreground text-background" : "hover:bg-muted"
+            }`}
+          >
+            <span className="text-base">✉️</span>
+            <span>{isArabic ? "إرسال عبر البريد الإلكتروني" : isFrench ? "Envoyer par Email" : "Send via Email"}</span>
+          </button>
+          
+          <button
+            type="button"
+            onClick={() => { playPaperSound(); setDispatchMode("whatsapp"); }}
+            className={`flex-1 py-3 px-4 font-display text-xs uppercase tracking-widest font-bold flex items-center justify-center gap-2 transition-colors cursor-pointer border-l-2 rtl:border-l-0 rtl:border-r border-foreground ${
+              dispatchMode === "whatsapp" ? "bg-emerald-900 text-emerald-100 dark:bg-emerald-800" : "hover:bg-muted"
+            }`}
+          >
+            <span className="text-base">💬</span>
+            <span>{isArabic ? "إرسال عبر واتساب" : isFrench ? "Envoyer par WhatsApp" : "Send via WhatsApp"}</span>
+          </button>
         </div>
 
         {/* Vintage Letter Paper */}
         <div className="letter-paper border-2 border-foreground p-6 md:p-10 relative min-h-[500px] shadow-sm overflow-hidden">
           
-          {/* Animated Ink Stamp Effect Overlay (Appears on Submit) */}
+          {/* Animated Ink Stamp Effect Overlay */}
           {isStamped && (
             <div className="absolute top-12 right-12 rtl:right-auto rtl:left-12 z-30 pointer-events-none animate-ink-stamp">
               <div className="border-4 border-red-800 text-red-800 dark:border-red-600 dark:text-red-500 p-3 font-display uppercase tracking-widest text-center rotate-[-8deg] bg-background/90 shadow-md">
@@ -100,7 +158,7 @@ export default function ContactPage() {
                   {isArabic ? "تم الإرسال" : isFrench ? "EXPÉDIÉ" : "SENT"}
                 </span>
                 <span className="text-[9px] font-bold block tracking-[0.2em]">
-                  GAZETTE OFFICIAL STAMP
+                  {dispatchMode === 'whatsapp' ? 'WHATSAPP DISPATCH' : 'EMAIL DISPATCH'}
                 </span>
                 <span className="text-[8px] font-mono block mt-0.5">
                   {new Date().toLocaleDateString()}
@@ -123,11 +181,39 @@ export default function ContactPage() {
               type="text" 
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="border-b-2 border-foreground bg-transparent px-2 py-1 font-bold text-foreground focus:outline-none min-w-[200px] flex-1"
+              className="border-b-2 border-foreground bg-transparent px-2 py-1 font-bold text-foreground focus:outline-none min-w-[180px] flex-1"
               placeholder={t.contactPage.placeholderName}
             />
-            <span>{t.contactPage.andWritingToSay}</span>
           </div>
+
+          {/* Dynamic Contact Info Input Line (Email or Phone depending on tab) */}
+          {dispatchMode === "email" ? (
+            <div className="font-body text-base mb-4 flex flex-wrap items-baseline gap-2">
+              <span className="font-display text-xs uppercase tracking-wider font-bold text-muted-foreground">
+                {isArabic ? "بريدي الإلكتروني :" : isFrench ? "Mon Email :" : "My Email Address:"}
+              </span>
+              <input 
+                type="email" 
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="border-b-2 border-foreground bg-transparent px-2 py-1 font-mono text-sm text-foreground focus:outline-none flex-1 min-w-[220px]"
+                placeholder="you@example.com"
+              />
+            </div>
+          ) : (
+            <div className="font-body text-base mb-4 flex flex-wrap items-baseline gap-2">
+              <span className="font-display text-xs uppercase tracking-wider font-bold text-emerald-800 dark:text-emerald-400">
+                {isArabic ? "رقم هاتفي / واتساب :" : isFrench ? "Mon Numéro WhatsApp :" : "My WhatsApp / Phone:"}
+              </span>
+              <input 
+                type="tel" 
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                className="border-b-2 border-foreground bg-transparent px-2 py-1 font-mono text-sm text-foreground focus:outline-none flex-1 min-w-[220px]"
+                placeholder="+33 6 12 34 56 78"
+              />
+            </div>
+          )}
 
           {/* Subject Line */}
           <div className="font-body text-base mb-6 flex flex-wrap items-baseline gap-2 border-b border-border-light pb-2">
@@ -155,13 +241,20 @@ export default function ContactPage() {
             <p className="text-lg font-bold italic mt-1">{name || t.contactPage.placeholderName}</p>
           </div>
 
-          {/* Single Animated Stamp Submit Button */}
+          {/* Animated Stamp Submit Button */}
           <button 
             type="button"
+            disabled={isSubmitting}
             onClick={handleSendLetter}
-            className="absolute bottom-6 right-6 rtl:right-auto rtl:left-6 stamp w-28 h-28 flex flex-col items-center justify-center bg-background hover:bg-accent border-2 border-foreground transition-all shadow-md group"
+            className={`absolute bottom-6 right-6 rtl:right-auto rtl:left-6 stamp w-28 h-28 flex flex-col items-center justify-center border-2 border-foreground transition-all shadow-md group ${
+              dispatchMode === 'whatsapp' 
+                ? 'bg-emerald-900 text-emerald-100 dark:bg-emerald-800 hover:bg-emerald-950' 
+                : 'bg-background hover:bg-accent'
+            }`}
           >
-            <span className="text-xl mb-1 group-hover:scale-110 transition-transform">📮</span>
+            <span className="text-xl mb-1 group-hover:scale-110 transition-transform">
+              {dispatchMode === 'whatsapp' ? '💬' : '📮'}
+            </span>
             <span className="font-display text-xs font-black uppercase tracking-wider text-center leading-tight">
               {isArabic ? "إرسالالرسالة" : isFrench ? "EXPÉDIER LA LETTRE" : "SEND LETTER"}
             </span>
