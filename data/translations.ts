@@ -10,6 +10,7 @@ export interface TranslationDictionary {
     essays: string;
     reading: string;
     letters: string;
+    editor: string;
   };
   sidebar: {
     contents: string;
@@ -101,7 +102,8 @@ export const translations: Record<Language, TranslationDictionary> = {
       projects: "Projects",
       essays: "Essays",
       reading: "Reading",
-      letters: "Letters"
+      letters: "Letters",
+      editor: "Pressroom"
     },
     sidebar: {
       contents: "Contents",
@@ -191,7 +193,8 @@ export const translations: Record<Language, TranslationDictionary> = {
       projects: "Projets",
       essays: "Essais",
       reading: "Lectures",
-      letters: "Courrier"
+      letters: "Courrier",
+      editor: "Rédaction"
     },
     sidebar: {
       contents: "Sommaire",
@@ -281,7 +284,8 @@ export const translations: Record<Language, TranslationDictionary> = {
       projects: "المشاريع",
       essays: "المقالات",
       reading: "القراءات",
-      letters: "الرسائل"
+      letters: "الرسائل",
+      editor: "غرفة الأخبار"
     },
     sidebar: {
       contents: "المحتويات",

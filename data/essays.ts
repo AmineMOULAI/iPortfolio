@@ -50,6 +50,47 @@ export interface Essay {
 
 export const rawEssays: EssayData[] = [
   {
+    "slug": "the-convergence-of-cognitive-science-and-neural-architectures",
+    "topicId": "ai-cognition",
+    "topicTitle": {
+        "en": "Artificial Intelligence & Cognition",
+        "fr": "Artificial Intelligence & Cognition",
+        "ar": "Artificial Intelligence & Cognition"
+    },
+    "title": {
+        "en": "The Convergence of Cognitive Science and Neural Architectures",
+        "fr": "The Convergence of Cognitive Science and Neural Architectures",
+        "ar": "The Convergence of Cognitive Science and Neural Architectures"
+    },
+    "subtitle": {
+        "en": "Exploring how biological neural dynamics inform next-generation reasoning systems.",
+        "fr": "Exploring how biological neural dynamics inform next-generation reasoning systems.",
+        "ar": "Exploring how biological neural dynamics inform next-generation reasoning systems."
+    },
+    "date": {
+        "en": "July 2026",
+        "fr": "July 2026",
+        "ar": "July 2026"
+    },
+    "content": {
+        "en": [
+            "As artificial intelligence advances from pattern recognition toward deliberate reasoning, the principles governing human cognition are becoming central to computational design.",
+            "By modeling working memory, attention allocation, and symbolic abstraction alongside deep representation learning, we open new avenues for resilient and interpretable machine intelligence.",
+            "This essay examines how cognitive architectures bridge the gap between connectionist neural networks and structured reasoning."
+        ],
+        "fr": [
+            "As artificial intelligence advances from pattern recognition toward deliberate reasoning, the principles governing human cognition are becoming central to computational design.",
+            "By modeling working memory, attention allocation, and symbolic abstraction alongside deep representation learning, we open new avenues for resilient and interpretable machine intelligence.",
+            "This essay examines how cognitive architectures bridge the gap between connectionist neural networks and structured reasoning."
+        ],
+        "ar": [
+            "As artificial intelligence advances from pattern recognition toward deliberate reasoning, the principles governing human cognition are becoming central to computational design.",
+            "By modeling working memory, attention allocation, and symbolic abstraction alongside deep representation learning, we open new avenues for resilient and interpretable machine intelligence.",
+            "This essay examines how cognitive architectures bridge the gap between connectionist neural networks and structured reasoning."
+        ]
+    }
+},
+  {
     slug: "le-coran-livre-de-connaissance-ou-morale",
     topicId: "centralite-du-coran",
     topicTitle: {

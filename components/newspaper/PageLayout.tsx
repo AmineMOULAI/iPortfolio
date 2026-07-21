@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation';
 import { useNewspaper } from '@/context/NewspaperContext';
 import { useLanguage } from '@/context/LanguageContext';
 import Masthead from './Masthead';
+import NewspaperToolbar from './NewspaperToolbar';
 import PageFooter from './PageFooter';
 import Sidebar from './Sidebar';
 import PageCornerCurl from './PageCornerCurl';
@@ -42,7 +43,12 @@ const PageLayout = ({
         className="newspaper-page newspaper-page-fold origin-left rtl:origin-right min-h-screen bg-background relative"
       >
         <div className="max-w-6xl mx-auto px-4 md:px-8 py-6 relative z-10">
-          {showMasthead && <Masthead compact={!showFullMasthead} />}
+          {showMasthead && (
+            <>
+              <Masthead compact={!showFullMasthead} />
+              <NewspaperToolbar />
+            </>
+          )}
           
           <div className={`flex flex-col ${showSidebar ? 'lg:flex-row' : ''} gap-8`}>
             {showSidebar && <Sidebar />}

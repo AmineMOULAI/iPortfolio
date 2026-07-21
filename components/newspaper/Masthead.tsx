@@ -97,12 +97,15 @@ const Masthead = ({ compact = false }: MastheadProps) => {
       </div>
 
       {/* Navigation */}
-      <nav className="flex justify-center flex-wrap gap-4 md:gap-10 mt-6 text-sm uppercase tracking-[0.15em] font-display">
+      <nav className="flex justify-center flex-wrap gap-4 md:gap-8 mt-6 text-sm uppercase tracking-[0.15em] font-display items-center">
         <Link href="/" className="hover:underline underline-offset-4 decoration-2">{t.nav.frontPage}</Link>
         <Link href="/projects" className="hover:underline underline-offset-4 decoration-2">{t.nav.projects}</Link>
         <Link href="/essays" className="hover:underline underline-offset-4 decoration-2">{t.nav.essays}</Link>
         <Link href="/reading" className="hover:underline underline-offset-4 decoration-2">{t.nav.reading}</Link>
         <Link href="/contact" className="hover:underline underline-offset-4 decoration-2">{t.nav.letters}</Link>
+        <Link href="/admin" className="hover:underline underline-offset-4 decoration-2 px-2 py-0.5 border border-foreground bg-muted font-bold text-xs">
+          🗞️ {t.nav.editor}
+        </Link>
       </nav>
     </header>
   );

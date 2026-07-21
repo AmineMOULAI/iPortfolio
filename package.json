@@ -7,7 +7,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "publish": "node scripts/publish.mjs",
+    "add": "node scripts/publish.mjs"
   },
   "dependencies": {
     "next": "^14.2.0",

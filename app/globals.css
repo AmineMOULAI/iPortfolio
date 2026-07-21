@@ -483,4 +483,30 @@ html[dir="ltr"] .quran-calligraphy-frame {
   .stamp {
     @apply border-2 border-foreground p-2 rotate-[-8deg] hover:rotate-[-4deg] transition-transform cursor-pointer;
   }
+
+  /* Halftone Newsprint Shading Effect */
+  body.halftone-ink img,
+  body.halftone-ink figure {
+    filter: sepia(0.25) contrast(1.15) grayscale(0.2);
+  }
+  body.halftone-ink .newspaper-page {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 0);
+    background-size: 4px 4px;
+  }
+
+  /* Broadsheet Print Mode */
+  @media print {
+    .print\:hidden {
+      display: none !important;
+    }
+    body {
+      background: #ffffff !important;
+      color: #000000 !important;
+    }
+    .newspaper-page {
+      box-shadow: none !important;
+      border: none !important;
+      padding: 0 !important;
+    }
+  }
 }
