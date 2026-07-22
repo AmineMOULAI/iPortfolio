@@ -103,9 +103,6 @@ const Masthead = ({ compact = false }: MastheadProps) => {
         <Link href="/essays" className="hover:underline underline-offset-4 decoration-2">{t.nav.essays}</Link>
         <Link href="/reading" className="hover:underline underline-offset-4 decoration-2">{t.nav.reading}</Link>
         <Link href="/contact" className="hover:underline underline-offset-4 decoration-2">{t.nav.letters}</Link>
-        <Link href="/admin" className="hover:underline underline-offset-4 decoration-2 px-2 py-0.5 border border-foreground bg-muted font-bold text-xs">
-          🗞️ {t.nav.editor}
-        </Link>
       </nav>
     </header>
   );
