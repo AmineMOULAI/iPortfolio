@@ -50,6 +50,135 @@ export interface Essay {
 
 export const rawEssays: EssayData[] = [
   {
+    slug: "peur-du-fanatisme-excuse-abandon-coran",
+    topicId: "centralite-du-coran",
+    topicTitle: {
+      en: "The Centrality of the Quran",
+      fr: "La Centralité du Coran",
+      ar: "مركزية القرآن"
+    },
+    title: {
+      en: "Is Fear of Extremism an Excuse to Abandon the Quran? And the Manipulators?",
+      fr: "La peur de l'extrémisme est-elle une excuse pour abandonner le Coran ? Et les manipulateurs ?",
+      ar: "هل الخوف من التطرف عذرٌ لهجران القرآن؟ والمتلاعبون؟"
+    },
+    subtitle: {
+      en: "Reflections on Quranic contemplation, overcoming fear of extremism, and guarding against ideological manipulation.",
+      fr: "Réflexions sur la méditation coranique, le dépassement de la peur de l'extrémisme et la protection contre la manipulation idéologique.",
+      ar: "إلى جانب من يقول إن القرآن «حمّال أوجه»، فيحسب قوله عذرًا لترك القرآن، ما نصيب أمثالهم؟"
+    },
+    date: {
+      en: "July 2026",
+      fr: "Juillet 2026",
+      ar: "يوليو 2026"
+    },
+    content: {
+      en: [
+        "Alongside those who say that the Quran carries multiple interpretations, considering their statement an excuse to abandon the Quran, what is the fate of their likes? There is a group, even if their intentions are sincere, claiming that contemplation might drag them into the sphere of extremism and interpreting verses according to their desires, and from this seed the manipulator arises. Is this excuse sufficient for one whose intention is sound? And why was the Quran abandoned under the pretext of the existence of manipulators?",
+        "If we look at the speaker's intention, if sound, they have erred in terms of fear, which they consider a final solution to eradicate extremism, but I do not think it is a solution that suffices. Extremism is a phenomenon that cannot be avoided, so to speak, and extremists exist at all levels. Yes, we may say that the Quran is the word of Allah, preserved from all this, but the Quran itself foretold that in the saying of the Almighty: ﴿He it is Who has sent down to thee the Book: In it are verses basic or fundamental (of established meaning); they are the foundation of the Book: others are allegorical. But those in whose hearts is perversity follow the part thereof that is allegorical, seeking discord, and searching for its hidden meanings, but no one knows its hidden meanings except Allah. And those who are firmly grounded in knowledge say: \"We believe in the Book; the whole of it is from our Lord\": and none will grasp the Message except men of understanding.﴾ [Ali 'Imran: 7].",
+        "This verse was revealed regarding those who leave the decisive and take the ambiguous to mislead people and confuse them, as Christians do; though we rarely see them today in the exact same form, as they argue that the Quran declared that Jesus son of Mary, peace be upon him, is the Spirit of God and His Word bestowed upon Mary, while forgetting the Almighty's saying: ﴿He was no more than a servant: We granted Our favour to him﴾ [Az-Zukhruf: 59], and His saying: ﴿The similitude of Jesus before Allah is as that of Adam; He created him from dust, then said to him: \"Be\": And he was.﴾ [Ali 'Imran: 59].",
+        "And there are those who excelled in misleading people using what is ambiguous in it, leaving the decisive. Therefore, if the solution to this extremism is leaving the contemplation of the Quran and acting upon it, then it is undoubtedly a great calamity. This is what frightens: that a Muslim leaves the Quran out of fear of extremism. The key point is that a problem is not solved by another problem, which is undoubtedly the more dangerous.",
+        "Extremism was and remains to this day, and today it is even more evil than before; Jews distort words, and Christians take the ambiguous and leave the decisive. As for our era, whoever comes along twists their tongue and begins interpreting Allah's verses according to their desires, going astray and misleading many of Allah's servants. This is mentioned by the Chosen One, peace and blessings be upon him, as he said: «When you see those who follow what is ambiguous in it, those are the ones whom Allah has named, so beware of them» [Narrated by Al-Bukhari and Muslim].",
+        "On the other hand, leaving the contemplation of the Quran out of fear of extremism opens the door to manipulators. If the Islamic intellect is disconnected from Revelation, this makes it easy for manipulators to play with the Islamic mind and spread extremist ideas, cloaking them to seek discord. This is obvious in today's world; the Islamic society was in a lamentable state, and manipulators knew how to exploit this intellectual weakness, committing tyranny in the land and tempting Muslims. Muslims could no longer distinguish truth from falsehood, nor recognize extremist ideas due to severe deception and broadcasting of doubts. With the alarming progress of social media and openness to the world, it has become easy to control people's minds and spread extremist ideas through various means that affect and corrupt public intellects.",
+        "Whoever claims to abandon Quranic contemplation under the guise of extremism suffers a double loss: either abandoning the Quran, which is equivalent to severing communication with Revelation and thus complete loss; or opening the door to those who corrupt minds. The Muslim who adopts this idea stands between loss and the danger of manipulators. Otherwise, the Quran itself warned against that, as ﴿Verily this Quran doth guide to that which is most right﴾ [Al-Isra: 9], and the Sunnah also had a share in extinguishing the fires of extremism and manipulation, for the Prophet's saying, peace and blessings be upon him: «The Quran was not revealed for parts of it to contradict other parts, but rather parts of it confirm other parts. What you know of it, act upon; and what you are ignorant of, refer to its scholar» (and in a narration: «And what is ambiguous to you, believe in it») [Good Hadith, reported by Ahmad and Abu Ya'la, and its origin was authenticated by Al-Albani in As-Silsilah As-Sahihah].",
+        "Thus, making action upon the decisive and faith in the ambiguous a prophetic solution to this dilemma. Stopping this extremism is more worthy than abandoning the Quran, and countering manipulators is more worthy than desertion. If discerning minds abandon Quranic insight, it becomes easy for extremists and manipulators to mislead them.",
+        "Contemplation, which is an obligation upon a Muslim, naturally follows conditions, the minimum of which is asking scholars, striving to realize derived ideas, and stopping at error, which is natural for human beings. Persisting in it is a clear cause for extremism and manipulation.",
+        "Fear exists, no doubt, and it is natural in our time. But abandonment no longer works, and it is the easiest option. Engaging in contemplation to dispel ignorance and take admonition from the Quran is a harder choice, but it is the one from which the river of guidance bursts forth. How could it not be, when it is ﴿A Book, whereof the verses are explained in detail;- from One Who is Wise and Well-acquainted.﴾ [Hud: 1].",
+        "And Allah is the One whose help is sought."
+      ],
+      fr: [
+        "À côté de ceux qui disent que le Coran « porte de multiples interprétations », considérant leur parole comme une excuse pour abandonner le Coran, quel est le sort de leurs pareils ? Il existe un groupe, même si leurs intentions sont sincères, prétendant que la méditation pourrait les faire entrer dans le cercle de l'extrémisme et l'interprétation des versets selon leurs désirs, et c'est de cette graine que naît le manipulateur. Cette excuse est-elle suffisante pour celui dont l'intention est saine ? Et pourquoi le Coran a-t-il été abandonné sous prétexte de l'existence des manipulateurs ?",
+        "Si nous regardons l'intention de celui qui s'exprime, si elle est saine, il s'est trompé en matière de peur qu'il considère comme une solution finale pour effacer l'extrémisme, mais je ne pense pas que ce soit une solution suffisante. L'extrémisme est un phénomène inévitable pour ainsi dire, et les extrémistes existent à tous les niveaux. Oui, nous pouvons dire que le Coran est la parole d'Allah préservée de tout cela, mais le Coran lui-même l'a annoncé dans la parole du Tout-Puissant : ﴿C'est Lui qui a fait descendre sur toi le Livre : il s'y trouve des versets univoques, qui sont la base du Livre, et d'autres équivoques. Ceux qui ont dans le cœur une inclinaison vers l'égarement mettent l'accent sur les versets équivoques, cherchant la dissension et cherchant à leur donner une interprétation particulière. Mais nul ne connaît leur interprétation, à part Allah. Mais ceux qui sont enracinés dans le savoir disent : \"Nous y croyons : tout vient de notre Seigneur !\" Mais seuls les doués d'intelligence s'en rappellent.﴾ [Al 'Imran : 7].",
+        "Ce verset est venu concernant ceux qui délaissent l'univoque et prennent l'équivoque pour égarer les gens et semer la confusion chez eux, comme le font les chrétiens ; bien que nous ne les voyions guère aujourd'hui sous la même forme, lorsqu'ils prétextent que le Coran a déclaré que Jésus fils de Marie, paix sur lui, est l'Esprit de Dieu et Sa parole envoyée à Marie, en oubliant la parole du Tout-Puissant : ﴿Il n'était qu'un serviteur que Nous avions comblé de bienfaits﴾ [Az-Zukhruf : 59], et Sa parole : ﴿Pour Allah, Jésus est comme Adam qu'Il créa de poussière puis Il lui dit : \"Sois\" et il fut.﴾ [Al 'Imran : 59].",
+        "Et il y a ceux qui ont excellé à égarer les gens avec ce qu'il contient d'équivoque, en délaissant l'univoque. Par conséquent, si la solution à cet extrémisme est l'abandon de la méditation du Coran et de sa pratique, c'est sans aucun doute une grande calamité. C'est ce qui est effrayant : qu'un musulman abandonne le Coran par peur de l'extrémisme. Et la preuve est qu'un problème ne se résout pas par un autre problème, qui est sans doute plus dangereux.",
+        "L'extrémisme a existé et continue jusqu'à aujourd'hui, et aujourd'hui il est encore plus néfaste qu'auparavant ; les juifs altèrent les mots, et les chrétiens prennent l'équivoque et délaissent l'univoque. Quant à notre époque, n'importe qui vient tordre sa langue et commencer à interpréter les versets d'Allah selon sa passion, s'égarant et égarant beaucoup de serviteurs d'Allah. Cela est mentionné dans la parole de l'Élu, paix et bénédictions sur lui, lorsqu'il a dit : « Si vous voyez ceux qui suivent ce qui est équivoque, ce sont ceux qu'Allah a nommés, alors méfiez-vous d'eux » [Rapporté par Al-Bukhari et Muslim].",
+        "D'un autre côté, abandonner la méditation du Coran par peur de l'extrémisme, c'est ouvrir la porte aux manipulateurs. Si l'esprit musulman est séparé de la Révélation, cela facilite la tâche aux manipulateurs pour manipuler l'esprit musulman et propager des idées extrémistes en les habillant pour chercher la dissension. Cela ne fait pas mystère dans le monde actuel ; la société musulmane était dans un état lamentable, et les manipulateurs ont su comment exploiter cette faiblesse intellectuelle, commettant la tyrannie sur la terre et tentant les musulmans. Les musulmans ne distinguent plus le vrai du faux et ne sont plus capables de reconnaître les idées extrémistes du fait de l'intensité de la tromperie et de la diffusion des doutes. Et avec le progrès effrayant des réseaux sociaux et l'ouverture sur le monde, il est devenu facile de contrôler les esprits des gens et de diffuser des idées extrémistes par différentes méthodes qui touchent et corrompent les esprits généraux.",
+        "Celui qui prétend abandonner la méditation du Coran sous prétexte de l'extrémisme subit une double perte : soit l'abandon du Coran, ce qui équivaut à couper la communication avec la Révélation et donc l'égarement complet ; soit ouvrir la porte à celui qui s'occupe de corrompre les esprits. Le musulman qui adopte cette idée se trouve entre l'égarement et le danger des manipulateurs. Sinon, le Coran lui-même a mis en garde contre cela : ﴿Certes ce Coran guide vers ce qu'il y a de plus droit﴾ [Al-Isra : 9], et la Sunnah a également eu une part dans l'extinction des feux de l'extrémisme et de la manipulation, de par la parole du Prophète, paix et bénédictions sur lui : « Le Coran n'a pas été révélé pour que ses parties se contredisent, mais elles se confirment les unes les autres. Ce que vous en connaissez, pratiquez-le ; et ce que vous en ignorez, renvoyez-le à son savant » (et dans une version : « Et ce qui vous est équivoque, croyez-y ») [Hadith bon, rapporté par Ahmad et Abu Ya'la, et son origine a été authentifiée par Al-Albani dans As-Silsilah As-Sahihah].",
+        "Il a donc fait de la pratique de l'univoque et de la foi en l'équivoque une solution prophétique à ce dilemme. L'arrêt de cet extrémisme est plus prioritaire que l'abandon du Coran, et repousser les manipulateurs est plus prioritaire que l'abandon. Si les esprits clairvoyants délaissent la lucidité coranique, il devient facile pour les extrémistes et les manipulateurs de les égarer.",
+        "La méditation, qui est un devoir pour le musulman, se fait naturellement selon des conditions, dont la moindre est de questionner les savants, de s'efforcer de concrétiser les idées déduites et de s'arrêter à l'erreur, ce qui est naturel chez l'homme. La persistance dans l'erreur est une cause évidente d'extrémisme et de manipulation.",
+        "La peur existe, sans doute, et elle est naturelle à notre époque. Mais l'abandon ne sert plus à rien, et c'est l'option la plus facile. S'immerger dans la méditation pour dissiper l'ignorance et tirer leçon du Coran est un choix plus difficile, mais c'est celui d'où jaillit le fleuve de la guidance. Et comment en serait-il autrement, alors qu'il est ﴿C'est un Livre dont les versets sont parfaits en sagesse et clairement exposés, de la part d'un Sage, Parfaitement Connaisseur.﴾ [Hud : 1].",
+        "Et Allah est Celui dont l'aide est implorée."
+      ],
+      ar: [
+        "إلى جانب من يقول إن القرآن «حمّال أوجه»، فيحسب قوله عذرًا لترك القرآن، ما نصيب أمثالهم؟ فهنالك طائفة، وإن صدقت نياتهم، يدّعون أن التدبر قد يدخلهم في دائرة التطرف وتأويل الآيات على حسب مرادهم، ومن هذه البذرة ينشأ المتلاعب. فهل هذا العذر كافٍ لمن صحت نيته؟ ولمَ هُجر القرآن لداعي وجود المتلاعبين؟",
+        "لو نظرنا إلى نية القائل، فإن صحت، فقد أخطأ من حيث الخوف الذي يحسبه حلًا نهائيًا لمحو التطرف، فلا أظنه حلًا يفي. فالتطرف ظاهرة لا يمكن تجنبها إن صح القول، والمتطرفون موجودون على كل المستويات. نعم، قد نقول إن القرآن كلام الله محفوظ من كل هذا، ولكن القرآن نفسه نبأ بذلك في قوله عز وجل: ﴿هُوَ الَّذِي أَنْزَلَ عَلَيْكَ الْكِتَابَ مِنْهُ آيَاتٌ مُحْكَمَاتٌ هُنَّ أُمُّ الْكِتَابِ وَأُخَرُ مُتَشَابِهَاتٌ ۖ فَأَمَّا الَّذِينَ فِي قُلُوبِهِمْ زَيْغٌ فَيَتَّبِعُونَ مَا تَشَابَهَ مِنْهُ ابْتِغَاءَ الْفِتْنَةِ وَابْتِغَاءَ تَأْوِيلِهِ ۗ وَمَا يَعْلَمُ تَأْوِيلَهُ إِلَّا اللَّهُ ۗ وَالرَّاسِخُونَ فِي الْعِلْمِ يَقُولُونَ آمَنَّا بِهِ كُلٌّ مِنْ عِنْدِ رَبِّنَا ۗ وَمَا يَذَّكَّرُ إِلَّا أُولُو الْأَلْبَابِ﴾ [آل عمران: 7].",
+        "وهذه الآية جاءت في الذين يتركون المحكم ويأخذون بالمتشابه لتضليل الناس والتلبيس عليهم، كما يفعل النصارى؛ ولا نكاد نراهم اليوم بالصورة نفسها، إذ يحتجون بأن القرآن نطق بأن عيسى ابن مريم عليه السلام هو روح الله وكلمته ألقاها إلى مريم، وينسون قوله عز وجل: ﴿إِنْ هُوَ إِلَّا عَبْدٌ أَنْعَمْنَا عَلَيْهِ﴾ [الزخرف: 59]، وقوله: ﴿إِنَّ مَثَلَ عِيسَى عِنْدَ اللَّهِ كَمَثَلِ آدَمَ ۖ خَلَقَهُ مِنْ تُرَابٍ ثُمَّ قَالَ لَهُ كُنْ فَيَكُونُ﴾ [آل عمران: 59].",
+        "وهناك من أبدع في إضلال الناس بما فيه من المشتبه، وتركوا المحكم. وبالتالي إذا كان حل هذا التطرف هو ترك تدبر القرآن والعمل به، فلا شك أنها مصيبة كبرى. وهذا ما يخيف: أن يترك المسلم القرآن خوفًا من التطرف. والشاهد أن المشكلة لا تُحل بمشكلة أخرى، وهي الأخطر بلا شك.",
+        "فالتطرف كان ولا يزال حتى اليوم، واليوم هو أشد شرًا من السابق؛ فاليهود يحرفون الكلم، والنصارى يأخذون بالمشتبه ويتركون المحكم. أما في عصرنا هذا، فمن دبّ وهبّ، لوى لسانه وبدأ يؤول آيات الله بهواه، ضل وأضل كثيرًا من عباد الله عز وجل. وهذا وارد في لسان المصطفى صلى الله عليه وسلم، إذ قال: «إِذَا رَأَيْتُمُ الَّذِينَ يَتَّبِعُونَ مَا تَشَابَهَ مِنْهُ، فَأُولَئِكَ الَّذِينَ سَمَّى اللهُ فَاحْذَرُوهُمْ» [رواه البخاري ومسلم].",
+        "أما من الجهة الأخرى، فترك تدبر القرآن خوفًا من التطرف هو فتح الباب للمتلاعبين. فإذا كان العقل الإسلامي منفصلًا عن الوحي، فإن هذا يسهل على المتلاعبين التلاعب بالعقل الإسلامي ونشر أفكار متطرفة وتلبيسها ابتغاء الفتنة. وهذا مما لا يخفى عن العالم الحالي؛ إذ إن المجتمع الإسلامي كان في حالة يرثى لها، وإن المتلاعبين عرفوا كيف يستغلون هذا الضعف الفكري، فبغوا في الأرض وفتنوا المسلمين. وإن المسلمين ما عادوا يميزون الحق من الباطل، ولا يقدرون على معرفة الأفكار المتطرفة من شدة التلبيس وبث الشبهات. ومع التقدم المخيف لوسائل التواصل، والانفتاح على العالم، أصبح من السهل التحكم في عقول الناس ونشر الأفكار المتطرفة بطرق مختلفة تصيب العقول العامة وتفسدها.",
+        "فمن يدّعي ترك تدبر القرآن بحجة التطرف، فخسارته خسارتان: إما هجر القرآن، وهو بمثابة قطع التواصل بالوحي، وبالتالي الضياع الكامل؛ وإما فتح الباب لمن له شأن في إفساد العقول. فالمسلم الذي يتبنى هذه الفكرة بين ضياع وخطر المتلاعبين. وإلا فالقرآن نفسه حذّر من ذلك، إذ ﴿إِنَّ هَٰذَا الْقُرْآنَ يَهْدِي لِلَّتِي هِيَ أَقْوَمُ﴾ [الإسراء: 9]، والسنة أيضًا كان لها حظ في إطفاء نيران التطرف والتلاعب، لقوله صلى الله عليه وسلم: «إِنَّ الْقُرْآنَ لَمْ يَنْزِلْ يُكَذِّبُ بَعْضُهُ بَعْضًا، بَلْ يُصَدِّقُ بَعْضُهُ بَعْضًا، فَمَا عَرَفْتُمْ مِنْهُ فَاعْمَلُوا بِهِ، وَمَا جَهِلْتُمْ مِنْهُ فَرُدُّوهُ إِلَى عَالِمِهِ» (وفي رواية: «وَمَا تَشَابَهَ عَلَيْكُمْ فَآمِنُوا بِهِ») [حديث حسن، أخرجه أحمد وأبو يعلى، وصحح أصله الألباني في السلسلة الصحيحة].",
+        "فجعل العمل بالمحكم، والإيمان بالمتشابه، حلًا نبويًا لهذه المعضلة. وإيقاف هذا التطرف أولى من ترك القرآن، والصدّ عن المتلاعبين أولى من الهجر. فإذا تركت العقول البصيرة القرآنية، سهل على المتطرفين والمتلاعبين تضليلها.",
+        "فالتدبر، وهو واجب على المسلم، يكون طبعًا وفق شروط، وأقلها سؤال العلماء، والسعي لتحقيق الأفكار المستنبطة، والوقوف عند الخطأ، وهو أمر طبيعي عند الإنسان. والتمادي فيه هو سبب ظاهر للتطرف والتلاعب.",
+        "الخوف موجود، لا شك، وهو طبيعي في زماننا هذا. ولكن الهجر لم يعد ينفع، وهو أسهل خيار. والخوض في التدبر لإذهاب الجهل والاتعاظ بالقرآن هو خيار أصعب، لكنه الذي يتفجر منه نهر الهدى. وكيف لا، وهو ﴿كِتَابٌ أُحْكِمَتْ آيَاتُهُ ثُمَّ فُصِّلَتْ مِنْ لَدُنْ حَكِيمٍ خَبِيرٍ﴾ [هود: 1].",
+        "والله المستعان."
+      ]
+    },
+    notes: {
+      en: [
+        "Multiple facets (Hammal Awjuh): Bearing multiple meanings or interpretations.",
+        "Ambiguous / Allegorical (Mushtabah / Mutashabih): Verses whose exact meaning may be unclear unless referred back to clear foundational verses.",
+        "Deviation (Zaygh): Tilting and leaning away from truth towards falsehood.",
+        "Interpretation (Ta'wil): Explaining the meaning or clarifying its ultimate reality.",
+        "Deception / Cloaking (Talbees): Mixing truth with falsehood to hide reality.",
+        "Committed tyranny (Baghaw fi al-ard): Transgressed, oppressed, and caused corruption.",
+        "Clear / Foundational (Al-Muhkam): Explicitly clear in meaning, leaving no ambiguity.",
+        "Contemplation (Tadabbur): Deep reflection upon the meaning moving from recitation to understanding and action."
+      ],
+      fr: [
+        "Porte de multiples interprétations (Hammal Awjuh) : Susceptible de plusieurs sens ou explications.",
+        "Équivoque / Ambigü (Mushtabah / Mutashabih) : Verset dont le sens est complexe à moins d'être rapporté au verset univoque.",
+        "Inclinaison / Égarement (Zaygh) : Dévitation de la vérité vers le faux.",
+        "Interprétation (Ta'wil) : Explication du sens ou clarification de sa réalité.",
+        "Tromperie / Confusion (Talbees) : Mélange du vrai et du faux pour masquer la vérité.",
+        "Tyrannie / Corruption (Baghaw fi al-ard) : Injustice et transgression des limites.",
+        "Univoque / Fondamental (Al-Muhkam) : Clair et évident de lui-même sans ambiguïté.",
+        "Méditation (Tadabbur) : Réflexion profonde allant de la récitation à la compréhension et à l'action."
+      ],
+      ar: [
+        "حمّال أوجه: أي يحتمل أكثر من معنى أو تفسير.",
+        "مشتبه / متشابه: ما التبس معناه أو احتمل أكثر من وجه ولا يُعرف مراده إلا برده إلى المحكم.",
+        "زَيْغ: ميل وانحراف عن الحق إلى الباطل.",
+        "تأويل: تفسير المعنى، أو بيان مآله وحقيقته.",
+        "التلبيس: خلط الحق بالباطل وإظهاره بصورة الحق لإخفاء الحقيقة.",
+        "بغوا في الأرض: ظلموا وأفسدوا وتجاوزوا الحد.",
+        "المحكم: الواضح الدلالة الظاهر بنفسه، الذي لا يلتبس معناه.",
+        "التدبر: التأمل العميق في المعنى والانتقال من التلاوة إلى فهم والعمل."
+      ]
+    },
+    references: {
+      en: [
+        "Surah Ali 'Imran, Verse 7.",
+        "Surah Az-Zukhruf, Verse 59.",
+        "Surah Ali 'Imran, Verse 59.",
+        "Surah Al-Isra, Verse 9.",
+        "Surah Al-Hadid, Verse 25.",
+        "Surah Hud, Verse 1.",
+        "Hadith reported by Al-Bukhari (No. 4547) and Muslim (No. 2665).",
+        "Hadith reported by Ahmad (No. 6702) and Al-Tabarani, authenticated by Al-Albani."
+      ],
+      fr: [
+        "Sourate Al 'Imran, verset 7.",
+        "Sourate Az-Zukhruf, verset 59.",
+        "Sourate Al 'Imran, verset 59.",
+        "Sourate Al-Isra, verset 9.",
+        "Sourate Al-Hadid, verset 25.",
+        "Sourate Hud, verset 1.",
+        "Rapporté par Al-Bukhari (n° 4547) et Muslim (n° 2665).",
+        "Rapporté par Ahmad (n° 6702) et Al-Tabarani, authentifié par Al-Albani."
+      ],
+      ar: [
+        "﴿هُوَ الَّذِي أَنْزَلَ عَلَيْكَ الْكِتَابَ مِنْهُ آيَاتٌ مُحْكَمَاتٌ هُنَّ أُمُّ الْكِتَابِ وَأُخَرُ مُتَشَابِهَاتٌ ۖ فَأَمَّا الَّذِينَ فِي قُلُوبِهِمْ زَيْغٌ فَيَتَّبِعُونَ مَا تَشَابَهَ مِنْهُ ابْتِغَاءَ الْفِتْنَةِ وَابْتِغَاءَ تَأْوِيلِهِ...﴾ — سورة آل عمران، الآية 7.",
+        "﴿إِنْ هُوَ إِلَّا عَبْدٌ أَنْعَمْنَا عَلَيْهِ وَجَعَلْنَاهُ مَثَلًا لِّبَنِي إِسْرَائيلَ﴾ — سورة الزخرف، الآية 59.",
+        "﴿إِنَّ مَثَلَ عِيسَىٰ عِندَ اللَّهِ كَمَثَلِ آدَمَ ۖ خَلَقَهُ مِن تُرَابٍ ثُمَّ قَالَ لَهُ كُن فَيَكُونُ﴾ — سورة آل عمران، الآية 59.",
+        "﴿إِنَّ هَٰذَا الْقُرْآنَ يَهْدِي لِلَّتِي هِيَ أَقْوَمُ﴾ — سورة الإسراء، الآية 9.",
+        "﴿لَقَدْ أَرْسَلْنَا رُسُلَنَا بِالْبَيِّنَاتِ وَأَنزَلْنَا مَعَهُمُ الْكِتَابَ وَالْمِيزَانَ لِيَقُومَ النَّاسُ بِالْقِسْطِ﴾ — سورة الحديد، الآية 25.",
+        "﴿كِتَابٌ أُحْكِمَتْ آيَاتُهُ ثُمَّ فُصِّلَتْ مِن لَّدُنْ حَكِيمٍ خَبِيرٍ﴾ — سورة هود، الآية 1.",
+        "«إذا رأيتم الذين يتبعون ما تشابه منه فأولك الذين سمّى الله، فاحذروهم» — أخرجه البخاري (رقم 4547)، ومسلم (رقم 2665) عن عائشة رضي الله عنها.",
+        "«إن القرآن لم يُنزل لتضربوا بعضه ببعض، ولكن يصدق بعضه بعضًا...» — أخرجه أحمد (رقم 6702)، والطبراني في المعجم الكبير، وصحح أصلَهُ وسنده الشيخ الألباني في «السلسلة الصحيحة» (رقم 405) و«صحيح الجامع» (رقم 2241)."
+      ]
+    }
+  },
+  {
     "slug": "the-convergence-of-cognitive-science-and-neural-architectures",
     "topicId": "ai-cognition",
     "topicTitle": {
