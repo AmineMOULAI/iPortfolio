@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800&family=Reem+Kufi:wght@500;700;800&family=Scheherazade+New:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;600;700;800;900&family=Amiri+Quran&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Readex+Pro:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700;800&family=Scheherazade+New:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500&display=swap');
 
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
@@ -33,40 +33,61 @@ html[lang="fr"] .font-body {
   font-family: 'EB Garamond', 'Source Serif 4', Garamond, serif;
 }
 
-/* 3. Arabic (Enhanced Classical Press & Calligraphic Kufi/Naskh) */
+/* 3. Arabic Typography System (Classical Press & Calligraphic Literary Elegance) */
 html[dir="rtl"], html[lang="ar"], body.rtl-arabic {
-  font-family: 'Noto Naskh Arabic', 'Amiri', 'Scheherazade New', 'Cairo', serif;
-  line-height: 1.85;
+  font-family: 'Amiri', 'Noto Naskh Arabic', 'Scheherazade New', 'Cairo', serif;
+  line-height: 2.05;
+  letter-spacing: 0.005em;
 }
 
 html[dir="rtl"] .font-display, html[lang="ar"] .font-display {
-  font-family: 'Reem Kufi', 'Readex Pro', 'Cairo', 'Amiri', serif;
+  font-family: 'Reem Kufi', 'Alexandria', 'Cairo', 'Amiri', serif;
+  font-weight: 700;
   letter-spacing: 0em;
 }
 
 html[dir="rtl"] .font-body, html[lang="ar"] .font-body {
-  font-family: 'Noto Naskh Arabic', 'Amiri', 'Scheherazade New', serif;
+  font-family: 'Amiri', 'Noto Naskh Arabic', 'Scheherazade New', serif;
+  font-size: 1.1875rem; /* ~19px - optimal reading scale for Arabic literary prose */
+  line-height: 2.1;
+}
+
+html[dir="rtl"] h1, html[lang="ar"] h1 {
+  font-family: 'Reem Kufi', 'Alexandria', 'Cairo', serif;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+html[dir="rtl"] h2, html[lang="ar"] h2,
+html[dir="rtl"] h3, html[lang="ar"] h3,
+html[dir="rtl"] h4, html[lang="ar"] h4 {
+  font-family: 'Reem Kufi', 'Cairo', 'Alexandria', serif;
+  font-weight: 700;
+  line-height: 1.45;
 }
 
 html[dir="rtl"] .drop-cap::first-letter, html[lang="ar"] .drop-cap::first-letter {
   float: right;
-  margin-left: 0.75rem;
+  margin-left: 0.85rem;
   margin-right: 0;
   font-family: 'Reem Kufi', 'Amiri Quran', serif;
+  font-size: 3.5rem;
   font-weight: 800;
+  line-height: 1.1;
+  color: hsl(var(--foreground));
 }
 
 /* Calligraphy & Quranic Verses / Islamic Quotes Styling */
 .font-quran, .quranic-verse, .arabic-quote {
-  font-family: 'Amiri Quran', 'Scheherazade New', 'Noto Naskh Arabic', 'Amiri', serif;
-  font-size: 1.25rem;
-  line-height: 2.3;
+  font-family: 'Amiri Quran', 'Scheherazade New', 'Amiri', serif;
+  font-size: 1.35rem;
+  line-height: 2.4;
   letter-spacing: 0em;
   font-weight: 500;
 }
 
 .font-calligraphy {
-  font-family: 'Reem Kufi', 'Amiri Quran', 'Readex Pro', 'Cairo', serif;
+  font-family: 'Reem Kufi', 'Aref Ruqaa', 'Amiri Quran', 'Cairo', serif;
   font-weight: 700;
 }
 
