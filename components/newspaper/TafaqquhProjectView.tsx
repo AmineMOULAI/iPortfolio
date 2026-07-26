@@ -72,6 +72,8 @@ export default function TafaqquhProjectView({
       tech5: "Nodemailer & Honeypot / reCAPTCHA v3 protection for secure inquiries",
 
       galleryTitle: "V. Complete Platform Presentation",
+      menuTitle: "VI. Navigation Menu & Drawer Interface",
+      menuCaption: "Figure 4.0 — The Interactive Navigation Menu & Drawer Interface of Tafaqquh, highlighting language selection, section jump links, and responsive drawer navigation.",
       
       linksHeader: "EXPLORE LIVE PLATFORM & CODE REPOSITORIES",
       vercelBtn: "Visit Live Vercel Platform",
@@ -123,6 +125,8 @@ export default function TafaqquhProjectView({
       tech5: "Nodemailer & Protection Honeypot / reCAPTCHA v3 pour des formulaires sécurisés",
 
       galleryTitle: "V. Présentation Globale de la Plateforme",
+      menuTitle: "VI. Interface de Navigation & Menu Tiroir",
+      menuCaption: "Figure 4.0 — L'interface de navigation et menu tiroir de Tafaqquh, mettant en valeur la sélection des langues, les liens rapides et le tiroir réactif.",
       
       linksHeader: "DÉCOUVRIR LA PLATEFORME EN LIGNE & CODE SOURCE",
       vercelBtn: "Visiter l'Application sur Vercel",
@@ -174,6 +178,8 @@ export default function TafaqquhProjectView({
       tech5: "Nodemailer وحماية حثيثة ضد البريد المزعج reCAPTCHA v3",
 
       galleryTitle: "خامساً: المعرض الكامل للمنصة",
+      menuTitle: "سادساً: واجهة القائمة والملاحة التفاعلية",
+      menuCaption: "الشكل 4.0 — واجهة القائمة والملاحة التفاعلية لمنصة تفقه وتظهر فيها خيارات التبديل بين اللغات والتنقل السريع بين المحاور.",
       
       linksHeader: "روابط المنصة الحية والمصدر البرمجي",
       vercelBtn: "زيارة تطبيق تفقه على Vercel",
@@ -411,6 +417,25 @@ export default function TafaqquhProjectView({
           </div>
           <figcaption className="text-xs font-body text-muted-foreground italic mt-3 text-center border-t border-border-light pt-2">
             {c.fullPageCaption}
+          </figcaption>
+        </figure>
+      </section>
+
+      {/* Section VI: Interactive Navigation Menu Showcase */}
+      <section className="mb-12">
+        <h2 className="font-display text-2xl font-black uppercase tracking-tight mb-4 border-b border-foreground pb-2">
+          {c.menuTitle}
+        </h2>
+        <figure className="border-2 border-foreground p-2 bg-background shadow-lg">
+          <div className="max-h-[650px] overflow-y-auto border border-border flex items-center justify-center bg-muted/20">
+            <img
+              src="/menu.png"
+              alt="Tafaqquh Navigation Menu Screenshot"
+              className="w-full max-w-sm md:max-w-md h-auto object-contain py-4"
+            />
+          </div>
+          <figcaption className="text-xs font-body text-muted-foreground italic mt-3 text-center border-t border-border-light pt-2">
+            {c.menuCaption}
           </figcaption>
         </figure>
       </section>
