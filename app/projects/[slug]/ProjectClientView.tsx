@@ -55,10 +55,18 @@ export default function ProjectClientView({ slug }: ProjectClientViewProps) {
 
         {/* Main Image */}
         <figure className="mb-8">
-          <div className="aspect-video bg-muted border border-border flex items-center justify-center">
-            <span className="text-muted-foreground text-sm font-body italic">
-              [ {project.title} ]
-            </span>
+          <div className="aspect-video bg-muted border border-border flex items-center justify-center overflow-hidden relative">
+            {project.image ? (
+              <img 
+                src={project.image} 
+                alt={project.title} 
+                className="w-full h-full object-contain md:object-cover bg-neutral-900/5 dark:bg-neutral-950"
+              />
+            ) : (
+              <span className="text-muted-foreground text-sm font-body italic">
+                [ {project.title} ]
+              </span>
+            )}
           </div>
           <figcaption className="text-xs font-body text-muted-foreground mt-2 italic text-center border-b border-border-light pb-2">
             {t.projectsPage.figCaption} — {project.title}, {project.year}

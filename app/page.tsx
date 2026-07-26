@@ -68,12 +68,21 @@ export default function Index() {
           <div className="space-y-4">
             {featuredProjects.map(project => (
               <article key={project.slug} className="pb-4 border-b border-border-light">
-                <PageLink href={`/projects/${project.slug}`}>
-                  <h4 className="font-display text-lg font-bold leading-tight mb-1">
+                <PageLink href={`/projects/${project.slug}`} className="group block">
+                  {project.image && (
+                    <div className="aspect-video w-full mb-2 bg-muted border border-border overflow-hidden relative">
+                      <img 
+                        src={project.image} 
+                        alt={project.title} 
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  )}
+                  <h4 className="font-display text-lg font-bold leading-tight mb-1 group-hover:underline">
                     {project.title}
                   </h4>
                 </PageLink>
-                <p className="text-sm text-muted-foreground font-body">
+                <p className="text-sm text-muted-foreground font-body line-clamp-2 mb-1">
                   {project.summary}
                 </p>
                 <span className="text-xs text-muted-foreground uppercase tracking-wide">

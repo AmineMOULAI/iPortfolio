@@ -22,6 +22,7 @@ export interface ProjectData {
   technologies: string[];
   description: LocalizedArray;
   links?: Array<{ label: string; href: string; external?: boolean }>;
+  image?: string;
 }
 
 export interface Project {
@@ -34,9 +35,56 @@ export interface Project {
   technologies: string[];
   description: string[];
   links?: Array<{ label: string; href: string; external?: boolean }>;
+  image?: string;
 }
 
 export const rawProjects: ProjectData[] = [
+  {
+    slug: "tafaqquh",
+    title: {
+      en: "Tafaqquh",
+      fr: "Tafaqquh",
+      ar: "تَفَقُّه (Tafaqquh)"
+    },
+    category: "ai",
+    summary: {
+      en: "A platform bridging knowledge, faith, research, and writing, dedicated to a deep understanding of Islamic sciences and intellectual growth.",
+      fr: "Une plateforme reliant savoir, foi, recherche et écriture, dédiée à la compréhension profonde des sciences islamiques et à l'épanouissement intellectuel.",
+      ar: "منصة تجمع بين العلم، الإيمان، البحث، والتدوين، تهدف إلى الفهم العميق للعلوم الإسلامية والبناء الفكري."
+    },
+    year: "2025",
+    role: {
+      en: "Founder & Lead Developer",
+      fr: "Fondateur & Développeur Principal",
+      ar: "المؤسس والمطور الرئيسي"
+    },
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "i18next", "Vercel"],
+    image: "/tafaqah1.png",
+    description: {
+      en: [
+        "Tafaqquh is an ambitious platform designed to foster a rigorous, structured, and accessible approach to Islamic knowledge, research, and writing.",
+        "Built with Next.js, TypeScript, and modern animation libraries, it offers a refined user interface that seamlessly integrates traditional Islamic calligraphy and aesthetic principles with cutting-edge web design.",
+        "The platform is structured around five core pillars: Foundations (intellectual methodology), Religion (authentic understanding), Research (methodological rigor), Writing (expressive clarity), and Impact & Expansion (community outreach and educational initiatives).",
+        "Tafaqquh also incorporates smart tools such as Izkur, a voice-activated digital Dhikr companion and Telegram bot, demonstrating the fusion of technology and spiritual practice."
+      ],
+      fr: [
+        "Tafaqquh est une plateforme ambitieuse conçue pour encourager une approche rigoureuse, structurée et accessible de la connaissance islamique, de la recherche et de la rédaction.",
+        "Développée avec Next.js, TypeScript et des bibliothèques d'animation modernes, elle propose une interface utilisateur raffinée qui intègre harmonieusement la calligraphie traditionnelle et les motifs géométriques islamiques aux standards modernes du design web.",
+        "La plateforme s'articule autour de cinq axes fondamentaux : les Fondements (méthodologie intellectuelle), la Religion (compréhension authentique), la Recherche (rigueur scientifique), l'Écriture (clarté d'expression) et l'Impact & Expansion (rayonnement communautaire).",
+        "Tafaqquh intègre également des outils intelligents tels que Izkur, un compagnon de Dhikr vocal avec bot Telegram, illustrant l'alliance entre technologie moderne et spiritualité."
+      ],
+      ar: [
+        "تَفَقُّه هي منصة طموحة مصممة لتعزيز منهجية رصينة وممتدة في طلب العلم الشرعي والبحث العلمي والتدوين الفكري.",
+        "طُوِّرت المنصة باستخدام Next.js وTypeScript وأحدث تقنيات التصميم، متيحة واجهة مستخدم راقية تجمع بين الجماليات والخط العربي والزخارف الهندسية والمعايير البرمجية الحديثة.",
+        "تتأسس المنصة على خمسة محاور رئيسية: الأسس (المنهجية الفكرية)، الدين (الفهم الأصيل)، البحث (الرؤية والتحقيق)، الكتابة (التعبير والبيان)، والأثر والتوسع (النفع المتعدي والمشاريع).",
+        "كما تضم المنصة أدوات ذكية مثل تطبيق 'اذْكُرْ' للتسبيح الصوتي التفاعلي وبوت تلغرام، مما يجسد سد الفجوة بين التقنية الحديثة والسلوك الروحي."
+      ]
+    },
+    links: [
+      { label: "Vercel Link", href: "https://tafaquh.vercel.app/", external: true },
+      { label: "GitHub", href: "https://github.com/AmineMOULAI/tafaquh", external: true }
+    ]
+  },
   {
     slug: "voxinsight",
     title: {
@@ -57,6 +105,7 @@ export const rawProjects: ProjectData[] = [
       ar: "المبتكر والمطور الرئيسي"
     },
     technologies: ["Python", "Gemini CLI", "Streamlit", "Playwright"],
+    image: "/screen.png",
     description: {
       en: [
         "VoxInsight is a comprehensive software suite built to extract and analyze customer feedback at scale. It operates across three distinct pillars: B2B bulk auditing, B2C real-time consumer arbitration, and B2B daily virtual management.",
@@ -101,6 +150,7 @@ export const rawProjects: ProjectData[] = [
       ar: "مطور برمجيات"
     },
     technologies: ["C/C++", "Python"],
+    image: "/PsychoRobots1.png",
     description: {
       en: [
         "The Psycho-robots project began as a technical exercise in multi-agent simulation and evolved into an exploration of emergent cooperation.",
@@ -146,6 +196,7 @@ export const rawProjects: ProjectData[] = [
       ar: "مهندس عتاد وبرمجيات"
     },
     technologies: ["VHDL", "C/C++"],
+    image: "/carcassonne.jpg",
     description: {
       en: [
         "This dual project combined low-level hardware architecture design with high-level game logic, creating a unique intersection of computer architecture and software engineering.",
@@ -187,6 +238,7 @@ export const rawProjects: ProjectData[] = [
       ar: "مطور ألعاب"
     },
     technologies: ["Python", "Tkinter", "Pygame"],
+    image: "/python.png",
     description: {
       en: [
         "A collection of interactive games built to explore fundamental game development concepts.",
@@ -293,7 +345,8 @@ export const getProjects = (lang: Language = 'en'): Project[] => {
     role: p.role[lang] || p.role.en,
     technologies: p.technologies,
     description: p.description[lang] || p.description.en,
-    links: p.links
+    links: p.links,
+    image: p.image
   }));
 };
 
@@ -309,7 +362,8 @@ export const getProjectBySlug = (slug: string, lang: Language = 'en'): Project |
     role: p.role[lang] || p.role.en,
     technologies: p.technologies,
     description: p.description[lang] || p.description.en,
-    links: p.links
+    links: p.links,
+    image: p.image
   };
 };
 

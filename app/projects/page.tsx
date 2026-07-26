@@ -34,10 +34,18 @@ export default function ProjectsPage() {
           >
             <article className="border border-border hover:border-foreground transition-colors">
               {/* Project Image Placeholder */}
-              <div className="aspect-square bg-muted flex items-center justify-center border-b border-border group-hover:bg-accent transition-colors">
-                <span className="text-muted-foreground text-xs font-body text-center px-2">
-                  [ {project.title} ]
-                </span>
+              <div className="aspect-square bg-muted flex items-center justify-center border-b border-border group-hover:bg-accent transition-colors overflow-hidden relative">
+                {project.image ? (
+                  <img 
+                    src={project.image} 
+                    alt={project.title} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                ) : (
+                  <span className="text-muted-foreground text-xs font-body text-center px-2">
+                    [ {project.title} ]
+                  </span>
+                )}
               </div>
               
               {/* Caption */}
